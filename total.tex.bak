@@ -355,6 +355,10 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\algorithmicbreak}{\textbf{break}}
+
 \begin{document}
 %
 % paper title
@@ -455,7 +459,8 @@ Email: cling@csd.uwo.ca}}
 
 \section{Experimental Discuss}
 \input{discuss.tex}
-
+\section{Domain Adaptation}
+\input{domain.tex}
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
