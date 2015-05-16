@@ -825,3 +825,22 @@ publisher = {Curran Associates, Inc.},
   year={2007},
   publisher={MIT; 1998}
 }
+@inproceedings{blitzer2008learning,
+  title={Learning bounds for domain adaptation},
+  author={Blitzer, John and Crammer, Koby and Kulesza, Alex and Pereira, Fernando and Wortman, Jennifer},
+  booktitle={Advances in neural information processing systems},
+  pages={129--136},
+  year={2008}
+}
+@article{chuwarm,
+  title={Warm Start for Parameter Selection of Linear Classifiers},
+  author={Chu, Bo-Yu and Ho, Chia-Hua and Tsai, Cheng-Hao and Lin, Chieh-Yen and Lin, Chih-Jen}
+}
+@inproceedings{gong2012geodesic,
+  title={Geodesic flow kernel for unsupervised domain adaptation},
+  author={Gong, Boqing and Shi, Yuan and Sha, Fei and Grauman, Kristen},
+  booktitle={Computer Vision and Pattern Recognition (CVPR), 2012 IEEE Conference on},
+  pages={2066--2073},
+  year={2012},
+  organization={IEEE}
+}
