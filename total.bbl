@@ -105,23 +105,6 @@ B.~Zhou, A.~Lapedriza, J.~Xiao, A.~Torralba, and A.~Oliva, ``Learning deep
   C.~Cortes, N.~Lawrence, and K.~Weinberger, Eds.\hskip 1em plus 0.5em minus
   0.4em\relax Curran Associates, Inc., 2014, pp. 487--495.
 
-\bibitem{jia2014caffe}
-Y.~Jia, E.~Shelhamer, J.~Donahue, S.~Karayev, J.~Long, R.~Girshick,
-  S.~Guadarrama, and T.~Darrell, ``Caffe: Convolutional architecture for fast
-  feature embedding,'' in \emph{Proceedings of the ACM International Conference
-  on Multimedia}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2014, pp.
-  675--678.
-
-\bibitem{srivastava2014dropout}
-N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
-  ``Dropout: A simple way to prevent neural networks from overfitting,''
-  \emph{The Journal of Machine Learning Research}, vol.~15, no.~1, pp.
-  1929--1958, 2014.
-
-\bibitem{linNiN}
-M.~Lin, Q.~Chen, and S.~Yan, ``Network in network,'' \emph{CoRR}, vol.
-  abs/1312.4400, 2013.
-
 \bibitem{kawano14c}
 Y.~Kawano and K.~Yanai, ``Automatic expansion of a food image dataset
   leveraging existing categories with domain adaptation,'' in \emph{Proc. of
@@ -132,6 +115,16 @@ Y.~Kawano and K.~Yanai, ``Automatic expansion of a food image dataset
 L.~Bossard, M.~Guillaumin, and L.~Van~Gool, ``Food-101 -- mining discriminative
   components with random forests,'' in \emph{European Conference on Computer
   Vision}, 2014.
+
+\bibitem{zeiler2010deconvolutional}
+M.~D. Zeiler, D.~Krishnan, G.~W. Taylor, and R.~Fergus, ``Deconvolutional
+  networks,'' in \emph{Computer Vision and Pattern Recognition (CVPR), 2010
+  IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2010, pp.
+  2528--2535.
+
+\bibitem{linNiN}
+M.~Lin, Q.~Chen, and S.~Yan, ``Network in network,'' \emph{CoRR}, vol.
+  abs/1312.4400, 2013.
 
 \bibitem{agrawal2014analyzing}
 P.~Agrawal, R.~Girshick, and J.~Malik, ``Analyzing the performance of

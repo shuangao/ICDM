@@ -1,4 +1,19 @@
-﻿Training a CNN with millions of parameters on a small dataset could easily lead to horrible overfitting. But the idea of supervised pre-training on some huge image datasets could preventing this problem in certain degree. Compared to other randomly initialized strategies with certain distribution, supervised pre-training is to initialize the weights according to the model trained from a specific task. Indeed, initialization with pre-trained model has certain bias as there is no single dataset including all the invariance for natural images \cite{agrawal2014analyzing}, but this bias can be reduced as the pre-trained image dataset increases and the fine-tuning should be benefit from it.
+﻿In this section, we illustrate the architecture used for deep CNN and by utilizing the pre-trained model, we obtain efficient feature extractors and achieve the-state-of-the-art performance on both food datasets.
+\subsection{Choose the architecture of deep Convolutional Neural Network}
+The architecture of deep CNN is deterministic for the performance of the feature extractor. 
+Instead of exploring our own deep CNN architecture, we decide to use the existing one, GoogLeNet.
+
+ \textbf{GoogLeNet}
+  shows another trend of deep CNN architecture with lots of small receptive fields. There are 9 Inception modules in GoogLeNet and Figure \ref{incept} shows the architecture of a single inception module. Inspired by \cite{linNiN}, lots of $1\times 1$ convolutional layers are used for computational efficiency. Another interesting feature of GoogLeNet is that there are two extra auxiliary classifiers in intermediate layers. During the training procedure, the loss of these two classifiers are counted into the total loss with a discount weight 0.3, in addition with the loss of the classifier on top. More architecture details can be found from \cite{szegedy2014going}.
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=.45]{fig/inception.pdf}\\
+  \caption{Inception Module. $n\times n$ stands for size $n$ receptive field, $n\times n\_reduce$ stands for the $1\times 1$ convolutional layer before the $n\times n$ convolution layer and $pool\_proj$ is another $1\times 1$ convolutional layer after the MAX pooling layer. The output layer concatenates all its input layers.}\label{incept}
+\end{figure}
+Even though, we have two dataset containing large amount of images
+Training a deep CNN with millions of parameters on a small dataset could easily lead to horrible overfitting. But the idea of supervised pre-training on some huge image datasets could preventing this problem in certain degree. Compared to other randomly initialized strategies with certain distribution, supervised pre-training is to initialize the weights according to the model trained from a specific task. Indeed, initialization with pre-trained model has certain bias as there is no single dataset including all the invariance for natural images \cite{agrawal2014analyzing}, but this bias can be reduced as the pre-trained image dataset increases and the fine-tuning should be benefit from it.
 \subsection{Pre-training and Fine-tuning}
 We conduct several experiments on both architectures and use different training initialization strategies for both Food-256 and Food-101 datasets. The scratch models are initialized with Gaussian distribution for AlexNet and Xavier algorithm for GoogLeNet%, which automatically determines the scale of initialization based on the number of input and output neurons
  \cite{glorot2010understanding}. These two initializations are used for training the original models for the ImageNet task. The ft-last and fine-tuned models are initialized with the weights pre-trained from ImageNet dataset. For the ft-last model, we just re-train the fully connected layers while the whole network is fine-tuned for the fine-tune model.
@@ -25,7 +40,7 @@ We conduct several experiments on both architectures and use different training 
     \begin{tabular}{cC{3cm}cc}
     \toprule
      & fv+linear \cite{Kawano:2014} & GoogLeNet & AlexNet \\
-     
+
     \midrule
     Top1  & 50.1& \textbf{70.13} & 63.82 \\
     Top5  & 74.4  & \textbf{90.66} & 85.59\\
@@ -144,30 +159,30 @@ From Table \ref{tab:ft} we can see that GoogLeNet always performances better tha
 
 The unique structure of the Inception module guarantees that the sparse outputs from previous layer can be squeezed with the $1\times 1$ convolutional layers and feed to convolutional layers with bigger receptive field to generate sparser representation. The squeeze action promises the back propagation error can be transferred more efficiently and makes the whole network more flexible to fit different recogntion tasks.
 
-\subsection{Learning across the datasets}
-From the previous experiments we can see that pre-training on the ImageNet dataset can improve the performance of the deep convolutional neural network on our specific area. In this part, we will discuss the generalization ability within the food recognition problem.  Zhou et al. trained AlexNet for Scene Recognition across two datasets with identical categories \cite{NIPS2014_Zhou}. But for more complex situation, such as two similar datasets with a little overlapped categories, we are very interested in exploring whether deep CNN can still successfully handle. Therefore, we conduct the following experiment to stimulate a more challenging real world problem: transferring the knowledge from the fine-tuned Food-101 model to a target set, Food-256 dataset. To make the experiment more practical, we limit the number of samples per category from Food-256 for training, because if we want to build a our own model using deep CNN for a specific task, the resource is always limited and it is exhausted to collect hundreds of labeled images for each category.
-
-The Food-101 and Food-256 datasets share about 46 categories of food even though the images in the same category may vary across these two datasets. The types of food in Food-101 are mainly western style while most types of food in Food-256 are typical Asian foods. We compare the top-5 accuracy trained from different size of subset for Food-256 on different pre-trained model and the results are shown in Table \ref{tab:cross}.
-%The ImageNet columns denote  the pre-trained model trained only on ImageNet images and the Food101\_ft columns denote the pre-trained model trained on ImageNet images and then fine-tuned on Food-101.
-The ImageNet columns denote using the model pre-trained from ImageNet dataset as the pre-trained model and Food101\_ft columns denote using the fine-tuned Food-101 model (the same one in Table \ref{tab:ft}) as the pre-trained model.
-
-From the result of Table \ref{tab:cross} we can see that, with this further transfer learning, both CNNs can achieve around 95\% of the accuracy trained on full dataset while just utilizing about half of them (50 per class, 12800 of 25361 images). This indicates that when there is not enough labeled data, with its strong generalization ability, deep CNN trained from general task can still achieve satisfying result and perform even better when an additional relevant dataset is involved. This encouraging result may attract more people to use deep CNN for their specific task and continue to explore the potential of the existing architecture as well as designing new ones.
-
-\begin{table*}[htbp]
-  \centering
-  \caption{Top5 Accuracy for transferring from Food101 to subset of Food256 in percent}
-    \begin{tabular}{c|cc|cc}
-    \toprule
-          & \multicolumn{2}{c|}{AlexNet} & \multicolumn{2}{c}{GoogLeNet} \\
-    \midrule
-    instances per class & ImageNet  & Food101\_ft    &  ImageNet  & Food101\_ft \\ \midrule
-    20    & 68.80  & {75.12} & 74.54 & {77.77} \\
-    30    & 73.15 & {77.02} & 79.21 & {81.06} \\
-    40    & 76.04 & {80.23} & 81.76 & {83.52} \\
-    50    & 78.90  & {81.66} & 84.22 & {85.84} \\
-    all    & 85.59 &  {87.21} & {90.66 }&   {90.65}     \\
-    \bottomrule
-    \end{tabular}%
-  \label{tab:cross}%
-\end{table*}%
+%\subsection{Learning across the datasets}
+%From the previous experiments we can see that pre-training on the ImageNet dataset can improve the performance of the deep convolutional neural network on our specific area. In this part, we will discuss the generalization ability within the food recognition problem.  Zhou et al. trained AlexNet for Scene Recognition across two datasets with identical categories \cite{NIPS2014_Zhou}. But for more complex situation, such as two similar datasets with a little overlapped categories, we are very interested in exploring whether deep CNN can still successfully handle. Therefore, we conduct the following experiment to stimulate a more challenging real world problem: transferring the knowledge from the fine-tuned Food-101 model to a target set, Food-256 dataset. To make the experiment more practical, we limit the number of samples per category from Food-256 for training, because if we want to build a our own model using deep CNN for a specific task, the resource is always limited and it is exhausted to collect hundreds of labeled images for each category.
+%
+%The Food-101 and Food-256 datasets share about 46 categories of food even though the images in the same category may vary across these two datasets. The types of food in Food-101 are mainly western style while most types of food in Food-256 are typical Asian foods. We compare the top-5 accuracy trained from different size of subset for Food-256 on different pre-trained model and the results are shown in Table \ref{tab:cross}.
+%%The ImageNet columns denote  the pre-trained model trained only on ImageNet images and the Food101\_ft columns denote the pre-trained model trained on ImageNet images and then fine-tuned on Food-101.
+%The ImageNet columns denote using the model pre-trained from ImageNet dataset as the pre-trained model and Food101\_ft columns denote using the fine-tuned Food-101 model (the same one in Table \ref{tab:ft}) as the pre-trained model.
+%
+%From the result of Table \ref{tab:cross} we can see that, with this further transfer learning, both CNNs can achieve around 95\% of the accuracy trained on full dataset while just utilizing about half of them (50 per class, 12800 of 25361 images). This indicates that when there is not enough labeled data, with its strong generalization ability, deep CNN trained from general task can still achieve satisfying result and perform even better when an additional relevant dataset is involved. This encouraging result may attract more people to use deep CNN for their specific task and continue to explore the potential of the existing architecture as well as designing new ones.
+%
+%\begin{table*}[htbp]
+%  \centering
+%  \caption{Top5 Accuracy for transferring from Food101 to subset of Food256 in percent}
+%    \begin{tabular}{c|cc|cc}
+%    \toprule
+%          & \multicolumn{2}{c|}{AlexNet} & \multicolumn{2}{c}{GoogLeNet} \\
+%    \midrule
+%    instances per class & ImageNet  & Food101\_ft    &  ImageNet  & Food101\_ft \\ \midrule
+%    20    & 68.80  & {75.12} & 74.54 & {77.77} \\
+%    30    & 73.15 & {77.02} & 79.21 & {81.06} \\
+%    40    & 76.04 & {80.23} & 81.76 & {83.52} \\
+%    50    & 78.90  & {81.66} & 84.22 & {85.84} \\
+%    all    & 85.59 &  {87.21} & {90.66 }&   {90.65}     \\
+%    \bottomrule
+%    \end{tabular}%
+%  \label{tab:cross}%
+%\end{table*}%
 

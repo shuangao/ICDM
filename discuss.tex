@@ -1,5 +1,22 @@
-﻿Training a CNN with millions of parameters on a small dataset could easily lead to horrible overfitting. But the idea of supervised pre-training on some huge image datasets could preventing this problem in certain degree. Compared to other randomly initialized strategies with certain distribution, supervised pre-training is to initialize the weights according to the model trained from a specific task. Indeed, initialization with pre-trained model has certain bias as there is no single dataset including all the invariance for natural images \cite{agrawal2014analyzing}, but this bias can be reduced as the pre-trained image dataset increases and the fine-tuning should be benefit from it.
+﻿In this section, we illustrate the architecture used for deep CNN and by utilizing the pre-trained model, we obtain efficient feature extractors and achieve the-state-of-the-art performance on GoogLeNet for both food datasets. Since the architecture of GoogLeNet is a recently discovered, there is not much work about its performance on other image dataset. We would like to discuss some features we find for GoogLeNet in comparison with AlexNet\cite{krizhevsky2012imagenet} in this section as well.
+\subsection{Architecture of GoogLeNet}
+The architecture of deep CNN is deterministic for the performance of the feature extractor. 
+Instead of exploring our own deep CNN architecture, we decide to use the existing one, GoogLeNet. GoogLeNet achieved 93.33\% top-5 accuracy on a 1000-category image recognition task which is very close to human annotation. 
+
+ The architecture of GoogLeNet is unique. Inspired by \cite{linNiN}, small $1\times 1$ receptive field are intensively used throughout the network. There are 9 Inception modules in GoogLeNet and Figure \ref{incept} shows the architecture of a single inception module. Another interesting feature of GoogLeNet is that there are two extra auxiliary classifiers in intermediate layers. During the training procedure, the loss of these two classifiers are counted into the total loss with a discount weight 0.3, in addition with the loss of the classifier on top. More architecture details can be found from \cite{szegedy2014going}.
+
+\begin{figure}
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=.45]{fig/inception.pdf}\\
+  \caption{Inception Module. $n\times n$ stands for size $n$ receptive field, $n\times n\_reduce$ stands for the $1\times 1$ convolutional layer before the $n\times n$ convolution layer and $pool\_proj$ is another $1\times 1$ convolutional layer after the MAX pooling layer. The output layer concatenates all its input layers.}\label{incept}
+\end{figure}
+
 \subsection{Pre-training and Fine-tuning}
+Even though we have two dataset containing large amount of images, it is still not sufficient to train a GoogLeNet well.
+Training a deep CNN with millions of parameters with insufficient data could easily lead to horrible overfitting. But the idea of supervised pre-training on some huge image datasets could preventing this problem in certain degree. Compared to other randomly initialized strategies with certain distribution, supervised pre-training is to initialize the weights according to the model trained from a specific task. Indeed, initialization with pre-trained model has certain bias as there is no single dataset including all the invariance for natural images \cite{agrawal2014analyzing}, but this bias can be reduced as the pre-trained image dataset increases and the fine-tuning should be benefit from it.
+
+We use the AlexNet, another architecture of deep CNN, as the baseline to illustrate the property of GoogLeNet.
 We conduct several experiments on both architectures and use different training initialization strategies for both Food-256 and Food-101 datasets. The scratch models are initialized with Gaussian distribution for AlexNet and Xavier algorithm for GoogLeNet%, which automatically determines the scale of initialization based on the number of input and output neurons
  \cite{glorot2010understanding}. These two initializations are used for training the original models for the ImageNet task. The ft-last and fine-tuned models are initialized with the weights pre-trained from ImageNet dataset. For the ft-last model, we just re-train the fully connected layers while the whole network is fine-tuned for the fine-tune model.
 \begin{table}[htbp]
