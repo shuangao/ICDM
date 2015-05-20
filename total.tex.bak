@@ -452,14 +452,16 @@ Email: cling@csd.uwo.ca}}
 
 
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 % no \IEEEPARstart
 \input{intro.tex}
 
-\section{Experimental Setup}
-\input{expsetup.tex}
-
-\section{Experimental Discuss}
+\section{Background}
+\input{background.tex}
+%
+%\section{Experimental Setup}
+%\input{expsetup.tex}
+\section{Training Deep Feature Extractor}\label{sec:ft}
 \input{discuss.tex}
 \section{Domain Adaptation}
 \input{domain.tex}

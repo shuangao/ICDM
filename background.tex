@@ -7,7 +7,8 @@ This is a relatively small dataset containing 256 kinds of foods and 31644 image
 \textbf{Food-101 Dataset.}
 This dataset contains 101-class real-world food (dish) images which were taken and labeled manually. The total number of images is 101,000 and there are exactly 1000 images for each class. Also, each class has been divided into training and testing set containing 750 images and 250 images respectively by its collector. The testing set is well cleaned manually while the training set is not well cleaned on purpose. This noisy training set is more similar to our real recognition situation and it is also a good way to see the effect of the noise on these two architectures.
 
-\subsection{Deep Convolutional Neural Network} 
+In our domain adaptation experiment, we use the categories from Food-101 dataset as our source domain and the categories from Food-256 dataset is the target domain.
+\subsection{Deep Convolutional Neural Network}
 There are some inherent properties of the food that makes our task challenging.
 \begin{itemize}
   \item Food doesn't have any distinctive spatial layout: for other tasks like scene recognition, we can always find some discriminative features such as buildings or trees, etc. Learning useful representation merely for food recognition itself is a complex task.
