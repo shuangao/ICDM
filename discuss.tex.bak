@@ -1,10 +1,9 @@
-﻿In this section, we illustrate the architecture used for deep CNN and by utilizing the pre-trained model, we obtain efficient feature extractors and achieve the-state-of-the-art performance on both food datasets.
-\subsection{Choose the architecture of deep Convolutional Neural Network}
-The architecture of deep CNN is deterministic for the performance of the feature extractor. 
-Instead of exploring our own deep CNN architecture, we decide to use the existing one, GoogLeNet.
+﻿In this section, we illustrate the architecture used for deep CNN and by utilizing the pre-trained model. We obtain efficient feature extractors by fine-tuning the GoogLeNet incorporating the data from ImageNet and achieve the-state-of-the-art performance on GoogLeNet for Food-101 dataset. Since the architecture of GoogLeNet is a recently discovered, there is not much work about its performance on other image dataset. We would like to discuss some features we find for GoogLeNet in comparison with AlexNet\cite{krizhevsky2012imagenet} in this section as well.
+\subsection{Architecture of GoogLeNet}
+The architecture of deep CNN is vital for the performance of the feature extractor.
+Instead of exploring our own deep CNN architecture, we decide to use the existing one, GoogLeNet. GoogLeNet achieved 93.33\% top-5 accuracy on a 1000-category image recognition task which is very close to human annotation and we believe that its architecture can help us extract efficient discriminative feature representations for our task.
 
- \textbf{GoogLeNet}
-  shows another trend of deep CNN architecture with lots of small receptive fields. There are 9 Inception modules in GoogLeNet and Figure \ref{incept} shows the architecture of a single inception module. Inspired by \cite{linNiN}, lots of $1\times 1$ convolutional layers are used for computational efficiency. Another interesting feature of GoogLeNet is that there are two extra auxiliary classifiers in intermediate layers. During the training procedure, the loss of these two classifiers are counted into the total loss with a discount weight 0.3, in addition with the loss of the classifier on top. More architecture details can be found from \cite{szegedy2014going}.
+ The architecture of GoogLeNet is unique to other deep CNN. Inspired by \cite{linNiN}, small $1\times 1$ receptive field are intensively used throughout the network. There are 9 Inception modules in GoogLeNet and Figure \ref{incept} shows the architecture of a single inception module. Another interesting feature of GoogLeNet is that there are two extra auxiliary classifiers in intermediate layers. During the training procedure, the loss of these two classifiers are counted into the total loss with a discount weight 0.3, in addition with the loss of the classifier on top. More architecture details can be found from \cite{szegedy2014going}.
 
 \begin{figure}
   \centering
@@ -12,42 +11,30 @@ Instead of exploring our own deep CNN architecture, we decide to use the existin
   \includegraphics[scale=.45]{fig/inception.pdf}\\
   \caption{Inception Module. $n\times n$ stands for size $n$ receptive field, $n\times n\_reduce$ stands for the $1\times 1$ convolutional layer before the $n\times n$ convolution layer and $pool\_proj$ is another $1\times 1$ convolutional layer after the MAX pooling layer. The output layer concatenates all its input layers.}\label{incept}
 \end{figure}
-Even though, we have two dataset containing large amount of images
-Training a deep CNN with millions of parameters on a small dataset could easily lead to horrible overfitting. But the idea of supervised pre-training on some huge image datasets could preventing this problem in certain degree. Compared to other randomly initialized strategies with certain distribution, supervised pre-training is to initialize the weights according to the model trained from a specific task. Indeed, initialization with pre-trained model has certain bias as there is no single dataset including all the invariance for natural images \cite{agrawal2014analyzing}, but this bias can be reduced as the pre-trained image dataset increases and the fine-tuning should be benefit from it.
+
 \subsection{Pre-training and Fine-tuning}
-We conduct several experiments on both architectures and use different training initialization strategies for both Food-256 and Food-101 datasets. The scratch models are initialized with Gaussian distribution for AlexNet and Xavier algorithm for GoogLeNet%, which automatically determines the scale of initialization based on the number of input and output neurons
+Even though Food-101 dataset contains large amount of images, it is still not sufficient to train the GoogLeNet well.
+Training a deep CNN with millions of parameters with insufficient data could easily lead to horrible overfitting. But the idea of supervised pre-training on some huge image datasets could preventing this problem in certain degree. Compared to other randomly initialized strategies with certain distribution, supervised pre-training is to initialize the weights according to the model trained from a specific task. Indeed, initialization with pre-trained model has certain bias as there is no single dataset including all the invariance for natural images \cite{agrawal2014analyzing}, but this bias can be reduced as the pre-trained image dataset increases and the fine-tuning should be benefit from it.
+
+We use the AlexNet, another architecture of deep CNN, as the baseline to illustrate the property of GoogLeNet.
+We conduct several experiments on both architectures and use different training initialization strategies for Food-101 datasets. The scratch models are initialized with Gaussian distribution for AlexNet and Xavier algorithm for GoogLeNet%, which automatically determines the scale of initialization based on the number of input and output neurons
  \cite{glorot2010understanding}. These two initializations are used for training the original models for the ImageNet task. The ft-last and fine-tuned models are initialized with the weights pre-trained from ImageNet dataset. For the ft-last model, we just re-train the fully connected layers while the whole network is fine-tuned for the fine-tune model.
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
   \centering
-  \caption{Top-5 Accuracy in percent on fine-tuned, ft-last and scratch model for two architectures}
-    \begin{tabular}{r|cc|cc}
+  \caption{Top-5 Accuracy for different deep CNN architectures}
+    \begin{tabular}{r|ccc}
     \toprule
-          & \multicolumn{2}{c|}{AlexNet} & \multicolumn{2}{c}{GoogLeNet} \\    \midrule
-     & Food-101   & Food-256   & Food-101   & Food-256 \\
-    Fine-tune & \textbf{88.12} & \textbf{85.59} & \textbf{93.51} & \textbf{90.66} \\
-    Ft-last &76.49	&79.26&	82.84	&83.77\\
-    Scratch & 78.18 & 75.35 & 90.45 & 81.20 \\
+          & Fine-tune & Ft-last & Scratch \\
+    \midrule
+    GoogLeNet & \textbf{93.51} & 82.84 & 90.45 \\
+    AlexNet & \textbf{88.12} & 78.18 & 76.49 \\
     \bottomrule
     \end{tabular}%
   \label{tab:ft}%
 \end{table}%
 
 
-% Table generated by Excel2LaTeX from sheet 'Sheet1'
-\begin{table}[htbp]
-  \centering
-  \caption{Accuracy compared to other method on Food-256 dataset in percent}
-    \begin{tabular}{cC{3cm}cc}
-    \toprule
-     & fv+linear \cite{Kawano:2014} & GoogLeNet & AlexNet \\
-
-    \midrule
-    Top1  & 50.1& \textbf{70.13} & 63.82 \\
-    Top5  & 74.4  & \textbf{90.66} & 85.59\\
-    \bottomrule
-    \end{tabular}%
-  \label{tab:256}%
-\end{table}%
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table*}[htbp]
@@ -69,13 +56,16 @@ We conduct several experiments on both architectures and use different training 
   \caption{Visualization of some feature maps of different GoogLeNet models in different layers for the same input image. 64 feature maps of each layer are shown. Conv1 is the first convolutional layer and Inception\_5b is the last convolutional layer. }
    \label{fig:sashimi}
 \end{figure*}
-From Table \ref{tab:ft} we can see that fine-tuning the whole network can improve the performance of the CNN for our task. Compared to other traditional computer vision methods (see Table \ref{tab:256} and \ref{tab:101}), GoogLeNet outperforms the other methods with large margins and we provide the state-of-the-art performance of these two food image datasets.
+From Table \ref{tab:ft} we can see that fine-tuning the whole network can improve the performance of the CNN for our task. Compared to other traditional computer vision methods (see Table \ref{tab:101}), GoogLeNet outperforms the other methods with large margins and we provide the state-of-the-art performance on this datasets. In Section \ref{sec:da}, the feature representations extracted from fine-tuned model are used as the input for our online domain adaptation method.
+
+\subsection{Discussion of the unique architecture of GoogLeNet}
+Instead of training a classifier for image recognition with deep CNN, we utilize deep CNN as the feature extractor for our adaptation task. Indeed, the classifier can take great advantage of discriminative feature representations for different categories. From our empirical study, we find that benefitting from the the unique architecture of Inception module in GoogLeNet, GoogLeNet can learn the feature representations in a efficient way while
 
 In Figure \ref{fig:sashimi} we visualize the feature maps of the pre-trained GoogLeNet model and fined-tuned GoogLeNet model with the same input image for some layers. We can see that the feature maps of the lower layer are similar as the lower level features are similar for most recognition tasks.
 Then we can see that the feature maps in the high-level are different which leads to totally different recognition results.
 Since only the last layer (auxiliary classifier) of the ft-last model is optimized, we can infer that the higher level features are more important which is consistent with our intuition. Also from Table \ref{tab:ft}, it is interesting to see that for the Food-101 task, the accuracy of  the scratch models outperforms the pre-trained models. Since Food-101 is a relatively large dataset with 750 images per class while Food-256 dataset is an imbalanced small one, this indicates that it is difficult to obtain a good deep CNN model while the data is insufficient.
 
-From Table \ref{tab:ft} we can see that GoogLeNet always performances better than AlexNet on both datasets. This implies that the higher level features of GoogLeNet are more discriminative compared to AlexNet and this is due to the special architecture of its basic unit, Inception module. Table \ref{tab:cosg} and \ref{tab:cosa} show the weights' cosine similarity of each layer between the fine-tuned models and their pre-trained models. From the results we can see that the weights in the low layer are more similar which implies that these two architectures can learn the hierarchical features. As the low level features are similar for most of the tasks, the difference of the objects is determined by high-level ones which are the combination of these low level features. Also from Table \ref{tab:cosa}, we can observe that, the weights of the pre-trained and fine-tuned models are extremely similar in AlexNet . This can be caused by the size of receptive filed. Since ReLUs are used in both architectures, vanishing gradients do not exist. Rectified activation function is mathematically given by:
+From Table \ref{tab:ft} we can see that GoogLeNet always performances better than AlexNet on both datasets. This implies that the higher level features of GoogLeNet are more discriminative compared to AlexNet and this is due to the special architecture of its basic unit, Inception module. Table \ref{tab:cosg} and \ref{tab:cosa} show the weights' cosine similarity of each layer between the fine-tuned models and their pre-trained models. From the results we can see that the weights in the low layer are more similar which implies that these two architectures can learn the hierarchical features. As the low level features are similar for most of the tasks, the difference of the objects is determined by high-level ones which are the combination of these low level features. Also from Table \ref{tab:cosa}, we can observe that, the weights of the pre-trained and fine-tuned models are extremely similar in AlexNet . This can be caused by the size of receptive filed. Even though ReLUs are used in both architectures, deep CNN could still suffer from vanished gradient. Rectified activation function is mathematically given by:
       \begin{equation}\label{relu}
         h = \max ({w^T}x,0) = \left\{ {\begin{array}{*{20}{c}}
 {{w^T}x}&{{w^T}x > 0}\\
@@ -92,18 +82,18 @@ From Table \ref{tab:ft} we can see that GoogLeNet always performances better tha
   \caption{Cosine similarity of the layers in inception modules between fine-tuned models and pre-trained model for GoogLeNet}
     \begin{tabular}{r|cccccc}
     \toprule
-    \multicolumn{7}{c}{food256} \\
-    \midrule
-          & \multicolumn{1}{l}{1x1} & \multicolumn{1}{l}{3x3\_reduce} & \multicolumn{1}{l}{3x3} & \multicolumn{1}{l}{5x5\_reduce} & \multicolumn{1}{l}{5x5} & \multicolumn{1}{l}{pool\_proj } \\
-    inception\_3a & 0.72  & 0.72  & 0.64  & 0.67  & 0.73  & 0.69 \\
-    inception\_3b & 0.59  & 0.64  & 0.53  & 0.70  & 0.60  & 0.56 \\
-    inception\_4a & 0.46  & 0.53  & 0.54  & 0.50  & 0.67  & 0.38 \\
-    inception\_4b & 0.55  & 0.58  & 0.63  & 0.52  & 0.69  & 0.41 \\
-    inception\_4c & 0.63  & 0.64  & 0.63  & 0.57  & 0.68  & 0.52 \\
-    inception\_4d & 0.60  & 0.62  & 0.60  & 0.58  & 0.68  & 0.50 \\
-    inception\_4e & 0.60  & 0.61  & 0.67  & 0.61  & 0.68  & 0.50 \\
-    inception\_5a & 0.51  & 0.53  & 0.58  & 0.48  & 0.60  & 0.39 \\
-    inception\_5b & 0.40  & 0.44  & 0.50  & 0.41  & 0.59  & 0.40 \\  \toprule
+%    \multicolumn{7}{c}{food256} \\
+%    \midrule
+%          & \multicolumn{1}{l}{1x1} & \multicolumn{1}{l}{3x3\_reduce} & \multicolumn{1}{l}{3x3} & \multicolumn{1}{l}{5x5\_reduce} & \multicolumn{1}{l}{5x5} & \multicolumn{1}{l}{pool\_proj } \\
+%    inception\_3a & 0.72  & 0.72  & 0.64  & 0.67  & 0.73  & 0.69 \\
+%    inception\_3b & 0.59  & 0.64  & 0.53  & 0.70  & 0.60  & 0.56 \\
+%    inception\_4a & 0.46  & 0.53  & 0.54  & 0.50  & 0.67  & 0.38 \\
+%    inception\_4b & 0.55  & 0.58  & 0.63  & 0.52  & 0.69  & 0.41 \\
+%    inception\_4c & 0.63  & 0.64  & 0.63  & 0.57  & 0.68  & 0.52 \\
+%    inception\_4d & 0.60  & 0.62  & 0.60  & 0.58  & 0.68  & 0.50 \\
+%    inception\_4e & 0.60  & 0.61  & 0.67  & 0.61  & 0.68  & 0.50 \\
+%    inception\_5a & 0.51  & 0.53  & 0.58  & 0.48  & 0.60  & 0.39 \\
+%    inception\_5b & 0.40  & 0.44  & 0.50  & 0.41  & 0.59  & 0.40 \\  \toprule
     \multicolumn{7}{c}{food101} \\ \midrule
           & \multicolumn{1}{l}{1x1 } & \multicolumn{1}{l}{3x3\_reduce} & \multicolumn{1}{l}{3x3} & \multicolumn{1}{l}{5x5\_reduce} & \multicolumn{1}{l}{5x5} & \multicolumn{1}{l}{pool\_proj } \\
     inception\_3a & 0.71  & 0.72  & 0.63  & 0.67  & 0.73  & 0.68 \\
@@ -128,7 +118,7 @@ From Table \ref{tab:ft} we can see that GoogLeNet always performances better tha
     \toprule
           & conv1 & conv2 & conv3 & conv4 & conv5 & fc6   & fc7 \\
     \midrule
-    food256 & 0.997 & 0.987 & 0.976 & 0.976 & 0.978 & 0.936 & 0.923 \\
+ %   food256 & 0.997 & 0.987 & 0.976 & 0.976 & 0.978 & 0.936 & 0.923 \\
     food101 & 0.996 & 0.984 & 0.963 & 0.960 & 0.963 & 0.925 & 0.933 \\
     \bottomrule
     \end{tabular}%
