@@ -29,7 +29,7 @@ Supervised domain adaptation models, such as Adaptive-SVM (A-SVM) and PMT-SVM, t
 
 As far as we know, few study has shown that there is an approach that can solve our task.
 \subsection{our method}
-Chu et al. recently proposed a warm start approach for parameter selection in linear model. By iteratively updating the parameters optimized from previous knowledge, the algorithm can search the optimal value for a specific task\cite{chuwarm}. Inspired by this, we propose a warm start adaptive learning algorithm that can adapt new categories from the target domain in an online learning scenario. Our method uses logistic regression to classify the representations obtained from deep CNN. For the new category in target domain, rather than utilizing the parameters from source domain, we employ another negative binary predictor pre-trained using all the examples as the negative class and warm start the pre-trained predictor with the parameters of this negative predictor for a new category. This approach can be extended into an online domain adaptation scenario when the algorithm just adopts one new category each time for multi-class target domain situation. Considering $M$ categories in the source domain $S$ and a new category $t$ from target domain $T$, we can train $M$ binary predictors $F=\left\{ {{f}\left( {{w_i},{b_i}} \right)} \right\}_{i = 1}^M$ for each category in $S$ and the negative predictor $\hat{f}=f(\hat{w},\hat{b})$ using all the examples in $\mathcal{P^-}=S$ as negative examples. The predictor $f_t$ for the new category $t$ is initialized with $\left\{\hat{w},\hat{b}\right\}$ and trained with $\mathcal{P^-}\bigcup\mathcal{P^+}$ while $\mathcal{P^+}=t$. Then we update the negative predictor $\hat{f}$ with negative examples $\mathcal{P^-}=S\bigcup t$. The complete strategy for our method is given in Algorithm \ref{algo:ws}.
+Chu et al. recently proposed a warm start approach for parameter selection in linear model and by iteratively updating the parameters optimized from previous knowledge, the algorithm can search the optimal value for a specific task\cite{chuwarm}. Inspired by this, we propose a warm start adaptive learning algorithm that can adapt new categories from the target domain in an online learning scenario. Our method uses logistic regression to classify the representations obtained from deep CNN. For the new category in target domain, rather than utilizing the parameters from source domain, we employ another negative binary predictor pre-trained using all the examples as the negative class and warm start the pre-trained predictor with the parameters of this negative predictor for a new category. This approach can be extended into an online domain adaptation scenario when the algorithm just adopts one new category each time for multi-class target domain situation. Considering $M$ categories in the source domain $S$ and a new category $t$ from target domain $T$, we can train $M$ binary predictors $F=\left\{ {{f}\left( {{w_i},{b_i}} \right)} \right\}_{i = 1}^M$ for each category in $S$ and the negative predictor $\hat{f}=f(\hat{w},\hat{b})$ using all the examples in $\mathcal{P^-}=S$ as negative examples. The predictor $f_t$ for the new category $t$ is initialized with $\left\{\hat{w},\hat{b}\right\}$ and trained with $\mathcal{P^-}\bigcup\mathcal{P^+}$ while $\mathcal{P^+}=t$. Then we update the negative predictor $\hat{f}$ with negative examples $\mathcal{P^-}=S\bigcup t$. The complete strategy for our method is given in Algorithm \ref{algo:ws}.
 \begin{algorithm}
   \caption{Complete algorithm of warm start online adaptation}\label{algo:ws}
   \begin{algorithmic}[1]
@@ -53,7 +53,7 @@ Chu et al. recently proposed a warm start approach for parameter selection in li
   \end{algorithmic}
 \end{algorithm}
 
-
+In our task, compared to those methods using the previous parameters directly, the warm start can choose a better initialization for the new category. We use Stochastic Gradient Descent to update the parameters for all the binary predictors as well as the negative one.
 \begin{figure*}
   \centering
   % Requires \usepackage{graphicx}
@@ -71,5 +71,5 @@ Chu et al. recently proposed a warm start approach for parameter selection in li
     \includegraphics[width=0.4\textwidth]{fig/101_N.png}\label{fig:wam_a}
 }
   \centering
-\caption{Warm start Vs Cold Start on Top-5 accuracy }
+\caption{Warm start Vs Cold Start on Top-5 accuracy for limited iterations}
 \end{figure*}
