@@ -1,5 +1,5 @@
 ﻿For a real world recognition task, an algorithm that can continuously adaptive to new labels just like the human does, is always very attractive and practical.
-In this section, we propose a method for online adaptive learning with a few labeled data in both domain and target examples using the features extracted from GoogLeNet. 
+In this section, we propose a method for online adaptive learning with a few labeled data in both domain and target examples using the features extracted from GoogLeNet.
 
  To illustrate our method, we design the following experiment, transferring from Food-101 dataset to Food-256 dataset while just using a few examples. Since Food-101 has more images per category, we use it as the source domain and the fine-tuned GoogLeNet on Food-101 from Section \ref{sec:ft} is used as the feature extractor to generate feature representations for both datasets. The Food-101 and Food-256 datasets share about 36 categories of food even though the images in the same category may vary across these two datasets. The types of food in Food-101 are mainly western style while most types of food in Food-256 are typical Asian foods. To make this task more challenging, we also limited the number of examples in both source and target domain. Unlike those previous studies which only consider the performance within the target domain, since the two domains are within the general food domain, we also consider how our method performs on the target domain incorporating the source domain. The experiment results show that not only can our method adapt the new categories, but also it can keep a relatively high overall accuracy for both source and target domains.
 For the rest part of this section, we first discuss the limitation of some previous domain adaptation approaches for our task, then we introduce our method and show the improved performance on the same task.
@@ -55,7 +55,7 @@ Chu et al. recently proposed a warm start approach for parameter selection in li
   \end{algorithmic}
 \end{algorithm}
 
-In our task, compared to those methods using the previous parameters directly, the warm start can choose a better initialization for the new category and can be more adaptive for new categories. We use Stochastic Gradient Descent (SGD) to update the parameters for all the binary predictors as well as the negative predictor. 
+In our task, compared to those methods using the previous parameters directly, the warm start can choose a better initialization for the new category and can be more adaptive for new categories. We use Stochastic Gradient Descent (SGD) to update the parameters for all the binary predictors as well as the negative predictor.
 
 \begin{figure*}
   \centering
@@ -69,7 +69,7 @@ In our task, compared to those methods using the previous parameters directly, t
 In this part, we conduct several experiments to illustrate the performance of our algorithm. Instead of using the supervised adaptation techniques, such as A-SVM, we use cold start which randomly initializes the parameters for all the predictors, as our baseline, because from Table \ref{tab:su_domian} we can see that in our situation, SVM without any adaptation technique shows similar results to those adaptive methods. We use effective learn rate following polynomial decay, to be 0 at max iteration and set base learning rate to 0.01.
 
 \subsubsection{From M category to M+1}
-Since our strategy is to adapt just one category each time for multiple new categories, we would like to show the results when the algorithm adapts any new single category from Food-256. For this experiment, we just pick one image from both source and target domain for training (so there is a balanced training set across the categories). The test set consists of all the test set images from Food-101 and all the images except for the single training image in the target category from Food-256.
+Since our strategy is to adapt just one category each time for multiple new categories, we would like to show the results when the algorithm adapts any new single category from Food-256. For this experiment, we just randomly pick one image from both source and target domain for training (so there is a balanced training set across the categories). The test set consists of all the test set images from Food-101 and all the images except for that single training image in the target category from Food-256.
 
 \subsubsection{From M to M+N}
 
