@@ -35,11 +35,11 @@ From empirical experiments, we find that adaptive methods suffer as the differen
   \label{tab:su_domian}%
 \end{table*}%
 
-As far as we know, few study has shown that there is an approach that can solve our task.
-\subsection{Online adaptive learning for new category}
-Chu et al. recently proposed a warm start approach for parameter selection in linear model and by iteratively updating the parameters optimized from previous knowledge, the algorithm can search the optimal value for a specific task\cite{chuwarm}. Inspired by this, we propose a warm start adaptive learning algorithm that can adapt new categories from the target domain in an online learning module. Instead of learning the whole target categories directly, our method adapts one category each time and iteratively updates all the parameters. 
-Our method uses logistic regression to classify the representations obtained from deep CNN. 
-For the new category in target domain, rather than utilizing the parameters from source domain, we employ another negative binary classifier pre-trained with all the examples from other categories as the negative class and warm start the classifier with the parameters of the negative classifier for the new category. This approach can be extended into an online domain adaptation scenario when the algorithm just adopts one new category in each step for multi-class target domain situation. For each step, considering $M$ categories in the source domain $S$ and a new category $t$ from target domain $T$, there are $M$ binary classifiers $F=\left\{ {{f}\left( {{w_i},{b_i}} \right)} \right\}_{i = 1}^M$ for each category in $S$ and the negative classifier $\hat{f}=f(\hat{w},\hat{b})$ using all the examples in $\mathcal{P^-}=S$ as negative examples. The classifier $f_t$ for the new category $t$ is initialized with $\left\{\hat{w},\hat{b}\right\}$ and trained with $\mathcal{P^-}\bigcup\mathcal{P^+}$ while $\mathcal{P^+}=t$. Then we update the negative classifier $\hat{f}$ with negative examples $\mathcal{P^-}=S\bigcup t$. The complete strategy for our method is given in Algorithm \ref{algo:ws}.
+As far as we know, few study has shown that there is an approach that can solve our task. Therefore, we propose an incremental adaptive learning algorithm to solve this problem.
+\subsection{Incremental adaptive learning for new category}
+Chu et al. recently proposed a warm start approach for parameter selection in linear model and by iteratively updating the parameters optimized from previous knowledge and their algorithm can search the optimal value for a specific task\cite{chuwarm}. Inspired by this, we propose a warm start adaptive learning algorithm that can adapt new categories from the target domain in an incremental learning mode. Instead of learning the whole target categories directly, our method adapts one category each time and iteratively updates all the parameters.
+Our method uses logistic regression to classify the representations obtained from deep CNN since compared to deep models, linear model can be more easily trained with just a few examples in each category.
+For learning a new category, rather than utilizing the parameters from source domain, we employ another negative binary classifier pre-trained with all the examples from other categories as the negative class and warm start the classifier with the parameters of the negative classifier for the new category. This approach can be extended into an incremental domain adaptation scenario when the algorithm just adapts one category in each step for multi-class situation. For each step, considering $M$ categories in the source domain $S$ and a new category $t$ from target domain $T$, there are $M$ binary classifiers $F=\left\{ {{f}\left( {{w_i},{b_i}} \right)} \right\}_{i = 1}^M$ for each category in $S$ and the negative classifier $\hat{f}=f(\hat{w},\hat{b})$ using all the examples in $\mathcal{P^-}=S$ as negative examples. The classifier $f_t$ for the new category $t$ is initialized with $\left\{\hat{w},\hat{b}\right\}$ and trained with $\mathcal{P^-}\bigcup\mathcal{P^+}$ while $\mathcal{P^+}=t$. Then we update the negative classifier $\hat{f}$ with negative examples $\mathcal{P^-}=S\bigcup t$. The complete strategy for our method is given in Algorithm \ref{algo:ws}.
 \begin{algorithm}
   \caption{Complete algorithm of warm start adaptation}\label{algo:ws}
   \begin{algorithmic}[1]
@@ -123,7 +123,7 @@ From empirical experiments we find that in order to get a convergent result, we 
       \label{fig:wama}
 \end{figure*}
 
-From Figure \ref{fig:wama} we can see that benefitting from warm start, classifiers can accumulate the information from previous steps and thus the margin between warm and cold starts increases as more new categories are learned. Indeed, cold start may not converge well for just 50 iterations. We believe that given enough training iteration, warm start can still converge to a better result (see Figure \ref{fig:errdiff}). We compare the results for different iterations and the average performance of 10 experiments are shown in Table \ref{tab:it}. The result of cold start in 20 iterations experiments are ignored because it shows similar result to random guess. We observe that increasing training iteration won't help improve the performance of warm start very much as it converges very fast by taking advantage of better initialization.
+From Figure \ref{fig:wama} we can see that benefitting from warm start, classifiers can accumulate the information from previous steps and thus the margin between warm and cold starts increases as more new categories are learned. Indeed, cold start may not converge well for just 50 iterations. We believe that given enough training iteration, warm start can still converge to a better result (see Figure \ref{fig:errdiff}). We compare the results for different iterations and the average performance of 10 experiments are shown in Table \ref{tab:it}. The results of cold start in 10 and 20 iterations experiments, which are not even significantly better than random guess, are ignored. We observe that increasing training iteration won't help improve the performance of warm start very much as it converges very fast by taking advantage of better initialization.
 \begin{figure*}[htbp]
 \centering
 \subfigure{
@@ -138,7 +138,7 @@ From Figure \ref{fig:wama} we can see that benefitting from warm start, classifi
 \subfigure{
     \includegraphics[width=0.3\textwidth]{fig/200W.png}
 }
-\caption{Overall learning curve in some steps for 300 iterations. \textbf{Observation:} training with enough iteration, warm start can still outperforms cold start in a single step.}
+\caption{Overall learning curve in some steps for 300 iterations. \textbf{Observation:} even training with enough iteration, warm start can still outperform cold start in a single step.}
 \label{fig:errdiff}
 \end{figure*}
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
@@ -150,7 +150,7 @@ From Figure \ref{fig:wama} we can see that benefitting from warm start, classifi
           & 10 iterations&20 iterations &\multicolumn{2}{c|}{50 Iterations} & \multicolumn{2}{c}{300 iterations} \\
     \midrule
           & warm start & warm start& warm start & cold start & warm start & cold start \\
-    Top-5& 60.37$\pm$ 0.58&60.54$\pm0.32$  &60.33$\pm$0.62   &     39.10$\pm$0.66   &    \textbf{61.48$\pm$0.59 }  & 55.35$\pm$0.48 \\
+    Top-5& 60.37$\pm$ 0.58   &    60.54$\pm0.32$  &60.33$\pm$0.62   &     39.10$\pm$0.66   &    \textbf{61.48$\pm$0.59 }  & 55.35$\pm$0.48 \\
     \bottomrule
     \end{tabular}%
   \label{tab:it}%
