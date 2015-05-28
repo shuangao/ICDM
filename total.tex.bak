@@ -356,7 +356,6 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\floatname{algorithm}{Procedure}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 \newcommand{\algorithmicbreak}{\textbf{break}}
@@ -419,14 +418,10 @@ Email: cling@csd.uwo.ca}}
 
 
 \begin{abstract}
-%Deep Convolutional Neural Network (CNN) has recently achieved great successes in object recognition competitions, many of which have been accomplished using AlexNet-like architecture. Meanwhile, the explorations of the recent GoogLeNet remain insufficient. % and little work has been done to compare two different deep CNN architectures.
-%Moreover, transfer learning with deep CNN has shown impressive results on benchmark datasets and can be an efficient way for specific recognition tasks.
-%%In order to explore these two problems,
-%%we first apply transfer learning for the food images recognition task.  The results show that incorporating the ImageNet dataset in pre-training can lead to improved performance over using only the target labeled dataset.
-% In this paper, we mainly focus on transfer learning on the food images recognition task.
-%The results of our experiments show that incorporating the ImageNet dataset model can lead to improved performance over using only the target labeled dataset.
-%We also conduct empirical studies comparing the performance of AlexNet and GoogLeNet on this task and provide the state-of-the-art performance on our task. We reveal that the small receptive field used in GoogLeNet can improve both training and computational efficiency for transfer learning. We also show in our experiments that deep CNN has strong generalization ability in transfer learning across two food datasets. % with little overlap categories even though the target dataset contains just a few labeled instances per category.
-%Our findings may help people better understand the architectures of deep CNN and explore new architectures.
+Deep Convolutional Neural Network (CNN) has recently achieved great successes in large scale object recognition competitions and achieved the performance as good as human annotation. However, training deep CNN requires an ample amount of labeled examples and those large scale database could not include all the desired categories. Many domain adaptation techniques have been proposed to learn categories across domain, but limited to either identical/similar categories or insufficient data. We find that when labeled examples are sparse, some previous methods suffer with deep representation.
+In this paper, we first train our efficient feature extractor, fine-tuning GoogLeNet on Food-101 dataset and achieve state-of-the-art performance. Then we propose a method that can learn new categories from target domain with deep representations and warm start technique. Our method divides a multiple new category learning problem into several step and learns a single category in each step with warm start. Compared to cold start, in each learning step, classifier with warm start can achieve a better accuracy.
+Benefitting from the parameters warm started from previous step, our method can achieve better overall result with a few training iteration.  
+
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -456,15 +451,16 @@ Email: cling@csd.uwo.ca}}
 % no \IEEEPARstart
 \input{intro.tex}
 
-\section{Background}
+\section{Background}\label{sec:bg}
 \input{background.tex}
 %
 %\section{Experimental Setup}
 %\input{expsetup.tex}
 \section{Training Deep Feature Extractor}\label{sec:ft}
 \input{discuss.tex}
-\section{Domain Adaptation}
+\section{Domain Adaptation}\label{sec:da}
 \input{domain.tex}
+
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -561,9 +557,11 @@ Email: cling@csd.uwo.ca}}
 
 % use section* for acknowledgement
 \section*{Acknowledgment}
-
-
 The authors would like to thank...
+%\appendices
+%\input{appendix.tex}
+
+
 
 
 

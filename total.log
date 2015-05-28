@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  20 MAY 2015 16:19
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  27 MAY 2015 16:17
 entering extended mode
 **D:/LaTex_Files/ICDM/total.tex
 (D:/LaTex_Files/ICDM/total.tex
@@ -210,14 +210,7 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip52
 \algorithmicindent=\skip53
 )
-(D:\LaTex_Files\ICDM\total.aux
-
-LaTeX Warning: Label `fig:wam_a' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:wam_a' multiply defined.
-
-)
+(D:\LaTex_Files\ICDM\total.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 363.
 LaTeX Font Info:    ... okay on input line 363.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 363.
@@ -247,25 +240,26 @@ LaTeX Font Info:    ... okay on input line 363.
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no » in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
-) (D:\LaTex_Files\ICDM\background.tex
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+) (D:\LaTex_Files\ICDM\background.tex [1{C:/ProgramData/MiKTeX/2.9/pdftex/confi
+g/pdftex.map}
 
 
-])
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+)
 (D:\LaTex_Files\ICDM\discuss.tex
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no » in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 
-<fig/inception.pdf, id=9, 572.1375pt x 279.0425pt>
+<fig/inception.pdf, id=8, 572.1375pt x 279.0425pt>
 File: fig/inception.pdf Graphic file (type pdf)
  <use fig/inception.pdf>
 Package pdftex.def Info: fig/inception.pdf used on input line 11.
@@ -275,41 +269,60 @@ Overfull \hbox (4.40962pt too wide) in paragraph at lines 11--11
  [][] 
  []
 
-<fig/sashimi.png, id=10, 727.96968pt x 319.1925pt>
+[2 <D:/LaTex_Files/ICDM/fig/inception.pdf>]
+<fig/sashimi.png, id=26, 727.96968pt x 319.1925pt>
 File: fig/sashimi.png Graphic file (type png)
  <use fig/sashimi.png>
 Package pdftex.def Info: fig/sashimi.png used on input line 55.
 (pdftex.def)             Requested size: 363.98395pt x 159.59586pt.
-
-[2 <D:/LaTex_Files/ICDM/fig/inception.pdf>] [3 <D:/LaTex_Files/ICDM/fig/sashimi
-.png>]) (D:\LaTex_Files\ICDM\domain.tex
+)
+(D:\LaTex_Files\ICDM\domain.tex
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no » in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
- [4]
+
+Underfull \vbox (badness 2744) has occurred while \output is active []
+
+ [3]
+[4 <D:/LaTex_Files/ICDM/fig/sashimi.png>]
 <fig/domain.jpg, id=37, 588.69937pt x 191.21437pt>
 File: fig/domain.jpg Graphic file (type jpg)
  <use fig/domain.jpg>
-Package pdftex.def Info: fig/domain.jpg used on input line 63.
+Package pdftex.def Info: fig/domain.jpg used on input line 69.
 (pdftex.def)             Requested size: 353.22234pt x 114.72949pt.
 
-<fig/warm.png, id=38, 384.43625pt x 282.05376pt>
-File: fig/warm.png Graphic file (type png)
- <use fig/warm.png>
-Package pdftex.def Info: fig/warm.png used on input line 80.
-(pdftex.def)             Requested size: 209.63669pt x 153.80878pt.
+[5] [6 <D:/LaTex_Files/ICDM/fig/domain.jpg>]
+<fig/M+N.png, id=45, 844.1136pt x 431.4519pt>
+File: fig/M+N.png Graphic file (type png)
+ <use fig/M+N.png>
+Package pdftex.def Info: fig/M+N.png used on input line 121.
+(pdftex.def)             Requested size: 337.63945pt x 172.5777pt.
 
-<fig/101_N.png, id=40, 391.4625pt x 282.05376pt>
-File: fig/101_N.png Graphic file (type png)
- <use fig/101_N.png>
-Package pdftex.def Info: fig/101_N.png used on input line 83.
-(pdftex.def)             Requested size: 209.63669pt x 151.04575pt.
+<fig/50W.png, id=47, 578.16pt x 431.4519pt>
+File: fig/50W.png Graphic file (type png)
+ <use fig/50W.png>
+Package pdftex.def Info: fig/50W.png used on input line 131.
+(pdftex.def)             Requested size: 157.23152pt x 117.32967pt.
+
+<fig/100W.png, id=48, 578.16pt x 431.4519pt>
+File: fig/100W.png Graphic file (type png)
+ <use fig/100W.png>
+Package pdftex.def Info: fig/100W.png used on input line 134.
+(pdftex.def)             Requested size: 157.23152pt x 117.32967pt.
+
+<fig/150W.png, id=49, 578.16pt x 431.4519pt>
+File: fig/150W.png Graphic file (type png)
+ <use fig/150W.png>
+Package pdftex.def Info: fig/150W.png used on input line 137.
+(pdftex.def)             Requested size: 157.23152pt x 117.32967pt.
+
+<fig/200W.png, id=50, 578.16pt x 431.4519pt>
+File: fig/200W.png Graphic file (type png)
+ <use fig/200W.png>
+Package pdftex.def Info: fig/200W.png used on input line 140.
+(pdftex.def)             Requested size: 157.23152pt x 117.32967pt.
 )
-(D:\LaTex_Files\ICDM\conclusion.tex [5]) (D:\LaTex_Files\ICDM\total.bbl
-Underfull \vbox (badness 1062) has occurred while \output is active []
-
- [6 <D:/LaTex_Files/ICDM/fig/domain.jpg> <D:/LaTex_Files/ICDM/fig/warm.png> <D:
-/LaTex_Files/ICDM/fig/101_N.png>])
+(D:\LaTex_Files\ICDM\conclusion.tex) (D:\LaTex_Files\ICDM\total.bbl [7])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -321,35 +334,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7
+[8
 
-] (D:\LaTex_Files\ICDM\total.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ <D:/LaTex_Files/ICDM/fig/M+N.png> <D:/LaTex_Files/ICDM/fig/50W.png> <D:/LaTex_
+Files/ICDM/fig/100W.png> <D:/LaTex_Files/ICDM/fig/150W.png> <D:/LaTex_Files/ICD
+M/fig/200W.png>] (D:\LaTex_Files\ICDM\total.aux) ) 
 Here is how much of TeX's memory you used:
- 2643 strings out of 493921
- 38192 string characters out of 3152883
- 205276 words of memory out of 3000000
- 5907 multiletter control sequences out of 15000+200000
- 42567 words of font info for 76 fonts, out of 3000000 for 9000
+ 2663 strings out of 493921
+ 38446 string characters out of 3152883
+ 200266 words of memory out of 3000000
+ 5923 multiletter control sequences out of 15000+200000
+ 43674 words of font info for 77 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 27i,11n,24p,1731b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<D:/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmex10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MiKTeX 2.9/fonts/t
-ype1/urw/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/
-MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/time
-s/utmri8a.pfb>
-Output written on total.pdf (7 pages, 700808 bytes).
+ 27i,11n,24p,1641b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/MiKTeX 2.9/fonts/enc/dvip
+s/fontname/8r.enc}<D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/M
+iKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/time
+s/utmr8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on total.pdf (8 pages, 883729 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
+ 107 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,34 +1,37 @@
 ﻿For a real world recognition task, an algorithm that can continuously adaptive to new labels just like the human does, is always very attractive and practical.
-In this section, we propose a framework for online adaptive learning with a few labeled data in both domain and target examples using the features extracted from GoogLeNet. We design the following experiment, transferring from Food-101 dataset to Food-256 dataset to illustrate our method while just using a few examples. Since Food-101 has more images per category, we use it as the source domain and the fine-tuned GoogLeNet on Food-101 from Section \ref{sec:ft} is used as the feature extractor to generate feature representations for both datasets. The Food-101 and Food-256 datasets share about 46 categories of food even though the images in the same category may vary across these two datasets. The types of food in Food-101 are mainly western style while most types of food in Food-256 are typical Asian foods. To make this task more challenging, we also limited the number of examples in both source and target domain. Unlike those previous studies which only consider the performance within the target domain, since the two domains are within the general food domain, we also consider how our method performs on the target domain incorporating the source domain. The experiment results show that not only can our method adapt the new categories, but also it can keep a relatively high overall accuracy for both source and target domains.
+In this section, we propose a method for online adaptive learning with a few labeled data in target examples using the feature representations from GoogLeNet.
+
+ To illustrate our method, we design the following experiment, transferring from Food-101 dataset to Food-256 dataset while just using a few examples. Since Food-101 has more images per category, we use it as the source domain and the fine-tuned GoogLeNet on Food-101 from Section \ref{sec:ft} is used as the feature extractor to generate feature representations for both datasets. The Food-101 and Food-256 datasets share about 36 categories of food even though the images in the same category may vary across these two datasets. The types of food in Food-101 are mainly western style while most types of food in Food-256 are typical Asian foods. To make this task more challenging, we also limited the number of examples in both source and target domain. Unlike those previous studies which only consider the performance within the target domain, since the two domains are within the general food domain, we also consider how our method performs on the target domain incorporating the source domain. The experiment results show that not only can our method adapt the new categories, but also it can keep a relatively high overall accuracy for both source and target domains.
 For the rest part of this section, we first discuss the limitation of some previous domain adaptation approaches for our task, then we introduce our method and show the improved performance on the same task.
 \subsection{Limits of previous approaches}
 From previous studies, there are two kinds of approach to solve our task. The first approach is to fine-tuning the deep CNN with the target examples incorporating with the sources ones.
 Fine-tuning the deep CNN model focuses on learning good feature representations from the images and using linear models for classification. From Section \ref{sec:ft}, we successfully use this approach to transfer the knowledge from a general domain to our food domain with impressive results. Indeed, deep CNN can learn discriminative features and by taking advantage of this, this approach achieved some impressive results from previous studies\cite{Chatfield14} \cite{zeiler2014visualizing}. However, fine-tuning on deep CNN requires an ample amount of labeled target data and sometimes could degrade the performance when the labeled examples are scarce\cite{hoffman2013one}. There are many hyperparameters that affect the performance of deep CNN and fine-tuning it on a sparse label condition can lead to horrible overfitting. Apart from its sensitivity to the hyperparameters, fine-tuning the whole network requires intensive computational resources which makes it inappropriate for online learning.
 
-Rather than learning efficient representations, another typical approach are more focused on dealing with the representation learned from conventional feature extraction methods for domain adaptation. 
-%Many methods have been proposed by minimizing the representation distance between the source and target domain in an unsupervised manner \cite{gong2012geodesic}\cite{fernando2013unsupervised}. 
-Supervised domain adaptation models, such as Adaptive-SVM (A-SVM) and PMT-SVM, try to utilize the knowledge from source domain and apply to target domain\cite{yang2007adapting}\cite{aytar2011tabula}. These methods are limited in our task for the following reasons: all these methods try to find the similarity between the source and target domain. Indeed, they show some good performance when these two domains have many overlapped or similar categories. From empirical experiments, we find that they suffer when the target domain is different from the source one. Table \ref{tab:su_domian} shows some empirical experiment results for two typical domain adaptation methods in a binary classification scenario. We manually choose the similar/identical source categories for the target ones if possible. For the those categories which we fail to find even similar category in source domain, we just choose the category whose representations are most similar to the target one measured by cosine similarity. The parameters used in these methods are set as the default because we think that tuned the parameters for these methods won't improve the performance very much for this experiment.  From the result of our simple experiment, we can see that A-SVM and PMT-SVM suffers from choosing the appropriate domain categories for new categories in target domain. And for our task which is a multi-class situation and more complicated than this, the performance of these methods could be even worse.
+Rather than learning efficient representations, another typical approach are more focused on dealing with the representation learned from conventional feature extraction methods for domain adaptation.
+%Many methods have been proposed by minimizing the representation distance between the source and target domain in an unsupervised manner \cite{gong2012geodesic}\cite{fernando2013unsupervised}.
+Supervised domain adaptation models, such as Adaptive-SVM (A-SVM) and PMT-SVM, try to utilize the knowledge from source domain and apply to target domain and hypothesize that there should be a relatively strong relationship between the categories among these two domains\cite{yang2007adapting}\cite{aytar2011tabula}. These methods are limited in our task for the reasons that all these methods try to find the similarity between the source and target domain. Indeed, they work well when these two domains have many overlapped or similar categories. However, sparse representations from deep CNN from which the linear classifiers would eventually benefit indicates that the distance of the representations between different categories could be very large.
+From empirical experiments, we find that adaptive methods suffer as the difference of source and target categories increases. Table \ref{tab:su_domian} shows some empirical experiment results for two typical domain adaptation methods in a binary classification scenario. We manually choose the similar/identical source categories for the target ones if possible. For the those categories which we fail to find even similar category in source domain, we just choose the category whose representations are most similar to the target one measured by cosine similarity. The parameters used in these methods are set as the default because we think that tuned the parameters for these methods won't improve the performance very much for this experiment.  From the result of our simple experiment, we can see that A-SVM and PMT-SVM suffers from choosing the appropriate domain categories for new categories in target domain. And for our task which is a multi-class situation and more complicated than this, the performance of these methods could be worse than training without any of these adaptive methods.
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
-\begin{table}[htbp]
+\begin{table*}[htbp]
   \centering
-  \caption{Average precision for A-SVM and PMT-SVM. Source categories without * are determined by cosine similarity}
-    \begin{tabular}{C{2cm}C{2cm}cc}
+  \caption{Average Precision for A-SVM, PMT-SVM, SVM and Logistic Regression. Source categories without * are determined by cosine similarity}
+    \begin{tabular}{cccccc}
     \toprule
-    Target category from food 256 & Source category from food 101 & A-SVM  & PMT-SVM \\
+    Category from food 256 & Category from food 101 & A-SVM  & PMT-SVM & SVM &LR\\
     \midrule
 %    Green salad & Caesar salad & 0.1627 & 0.1622 \\
-    Doughnut & Doughnut & 0.4771 & 0.4735 \\
-    Caesar salad &  Caesar salad & 0.9488 & 0.9496 \\
-    Rice  & Fried rice & 0.8118 & 0.7932 \\
-    Oatmeal & French onion soup* & 0.3257 & 0.4100 \\
-    pork cutlet & French fries* & 0.0446 & 0.0381 \\
+    Doughnut & Doughnut & 0.4771 & 0.4735 &0.4781&0.4554\\
+    Caesar salad &  Caesar salad & 0.9488 & 0.9496 &0.9498&0.9486\\
+    Rice  & Fried rice & 0.8118 & 0.7932 &0.7932&0.9004\\
+    Oatmeal & French onion soup* & 0.0345 & 0.0381 & 0.0347 &0.0454\\
+    pork cutlet & French fries* & 0.0446 & 0.0381 &0.0450& 0.0837\\
     \bottomrule
     \end{tabular}%
   \label{tab:su_domian}%
-\end{table}%
+\end{table*}%
 
 As far as we know, few study has shown that there is an approach that can solve our task.
-\subsection{our method}
+\subsection{Online adaptive learning for new category}
 Chu et al. recently proposed a warm start approach for parameter selection in linear model and by iteratively updating the parameters optimized from previous knowledge, the algorithm can search the optimal value for a specific task\cite{chuwarm}. Inspired by this, we propose a warm start adaptive learning algorithm that can adapt new categories from the target domain in an online learning scenario. Our method uses logistic regression to classify the representations obtained from deep CNN. For the new category in target domain, rather than utilizing the parameters from source domain, we employ another negative binary predictor pre-trained using all the examples as the negative class and warm start the pre-trained predictor with the parameters of this negative predictor for a new category. This approach can be extended into an online domain adaptation scenario when the algorithm just adopts one new category each time for multi-class target domain situation. Considering $M$ categories in the source domain $S$ and a new category $t$ from target domain $T$, we can train $M$ binary predictors $F=\left\{ {{f}\left( {{w_i},{b_i}} \right)} \right\}_{i = 1}^M$ for each category in $S$ and the negative predictor $\hat{f}=f(\hat{w},\hat{b})$ using all the examples in $\mathcal{P^-}=S$ as negative examples. The predictor $f_t$ for the new category $t$ is initialized with $\left\{\hat{w},\hat{b}\right\}$ and trained with $\mathcal{P^-}\bigcup\mathcal{P^+}$ while $\mathcal{P^+}=t$. Then we update the negative predictor $\hat{f}$ with negative examples $\mathcal{P^-}=S\bigcup t$. The complete strategy for our method is given in Algorithm \ref{algo:ws}.
 \begin{algorithm}
   \caption{Complete algorithm of warm start online adaptation}\label{algo:ws}
@@ -53,8 +56,8 @@ Chu et al. recently proposed a warm start approach for parameter selection in li
   \end{algorithmic}
 \end{algorithm}
 
-In our task, compared to those methods using the previous parameters directly, the warm start can choose a better initialization for the new category.  Besides that, our method warm start strategy gets rid of the constraint of  
-We use Stochastic Gradient Descent to update the parameters for all the binary predictors as well as the negative one.
+In our task, compared to those methods using the previous parameters directly, the warm start can choose a better initialization for the new category and can be more adaptive for new categories. We use Stochastic Gradient Descent (SGD) to update the parameters for all the binary predictors as well as the negative predictor.
+
 \begin{figure*}
   \centering
   % Requires \usepackage{graphicx}
@@ -63,14 +66,64 @@ We use Stochastic Gradient Descent to update the parameters for all the binary p
   \label{fig:wm}
 \end{figure*}
 
+\subsection{Experiment setup}
+For our experiments, we use the fine-tuned GoogLeNet described in Section \ref{sec:ft} as the feature extractor, From previous studies we find that generally model trained from the feature representations from higher level outperforms the model using the representations from lower ones\cite{hoffman2013one}. Thus we use the feature representations from \emph{Pool5} after Inception\_5a to train the classifiers for the source domain as well as the target one. Food-101 is used as the source domain and Food-256 is the target one. Since there are 36 overlapped categories between our source and target domain, we remove these categories from Food-256 as noisy data and there are 220 categories in our experiment.
+
+Baseline: Instead of using the supervised adaptation techniques, such as A-SVM, we use cold start which randomly initializes the parameters for all the predictors, as our baseline, because from Table \ref{tab:su_domian} we can see when adapting new categories, SVM and LR without any adaptation technique show similar results to those adaptive methods. The hypothesis of these adaptive methods limits their ability to adapt new categories as we discuss above.
+
+Train and test set in \emph{n shorts:} In our experiments, the training set of $n$ shots contains $n$ randomly picked examples from each category in both Food-101 and Food-256 datasets and the test set contains all the rest examples in Food-256 only.
+
+For our method, we use effective learn rate following polynomial decay, to be 0 at max iteration and set base learning rate to 0.01. The initialization of the predictors for source domain are trained with all the examples from source domain and negative predictor are initialized the same way as well.Unlike the other studies which consider the performance within the target domain separately, since the categories in our two datasets are in the general food category we would rather considering to combine them together and evaluate the overall performance for target categories on all the categories of these two domains.
+\subsection{From 101 to 102 categories}
+When there are multiple categories in target domain, our method adapts one category each time, updating all the parameters for all binary logistic regression classifiers. So the algorithm starts from 101 to 102 categories situation. We conduct the following experiment: in each round, we try to add each of the 220 target categories to Food-101 (so we run 102-category experiments 220 times) and evaluate accuracy of the target category among these 102 categories.  Table \ref{tab:N+1} shows the average performance of 10 rounds experiments.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Combined accuracy for a single new target category in M+1 experiment. Average top-5 accuracies for some categories are shown. Last row shows the average results among all 220 categories}
+    \begin{tabular}{c|cc|cc}
+    \toprule
+          & \multicolumn{2}{c|}{5 shots} & \multicolumn{2}{c}{1 shot} \\
+    \midrule
+       target category   & \multicolumn{1}{c}{Warm} & \multicolumn{1}{c|}{Cold} & \multicolumn{1}{c}{Warm} & \multicolumn{1}{c}{Cold} \\
+        \midrule
+    crape & \textbf{84.16} & 62.29 & \textbf{56.20}  & 28.00 \\
+   chip butty & \textbf{80.97} & 65.82 & \textbf{55.03} & 37.40 \\
+    meat loaf & \textbf{67.78} & 53.15 & \textbf{68.21} & 56.07 \\
+    dried fish & \textbf{92.00}    & 79.81 &\textbf{83.85} & 71.19 \\
+   scrambled egg & \textbf{75.21} & 63.54 & \textbf{59.00}    & 43.20 \\
+    pork belly & \textbf{81.76 }& 70.59 &\textbf{53.21} & 32.45 \\
+    natto & 79.01&\textbf{80.70}&\textbf{73.69}&66.71\\
+    miso soup &\textbf{96.06}&95.92&91.04&\textbf{94.52}\\
+    \midrule
+    %Average &\textbf{91.91$\pm$8.15}&88.82$\pm$10.40  & \textbf{80.77$\pm$ 12.03} & $71.78\pm 15.07 $ \\
+    Overall average &\textbf{91.91}&88.82  & \textbf{80.77} & 71.78 \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:N+1}%
+\end{table}%
+From Table \ref{tab:N+1} we can see that by taking advantage of the warm start, 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{From 101 to 101+220 categories}
+In this part we show the whole the procedure for adapting the all 220 categories in Food-256. We find that it is difficult to get a convergent results for multiple category situation for warm start for different train/test split in warm shot. From empirical experiments we find that warm start can get a convergent result for at least 5 examples for each category and we only show five shots results for this experiment. The categories are added following their category index in Food-256. We also do this experiment 10 times and Figure \ref{fig:wam_a} shows the average results in 5 short for both warm and cold start.
 \begin{figure*}
   \centering
-  \subfigure{
-    \includegraphics[width=0.4\textwidth]{fig/warm.png}\label{fig:wam_a}
+    \includegraphics[scale=0.4]{fig/M+N.png}\label{fig:wam_a}
+    \caption{Top-5 accuracy for 220 categories in target domain among 101+220 categories with 5 shots. Mean and standard deviation are shown.}
+\end{figure*}
+From Figure \ref{fig:wam_a} we can see that benefitting from better initialization, warm start can accumulate the 
+
+\begin{figure*}[htbp]
+\centering
+\subfigure{
+    \includegraphics[width=0.3\textwidth]{fig/10W.png}\label{a}
 }
 \subfigure{
-    \includegraphics[width=0.4\textwidth]{fig/101_N.png}\label{fig:wam_a}
+    \includegraphics[width=0.3\textwidth]{fig/50W.png}\label{b}
 }
-  \centering
-\caption{Warm start Vs Cold Start on Top-5 accuracy for limited iterations}
+\subfigure{
+    \includegraphics[width=0.3\textwidth]{fig/100W.png}\label{c}
+}
+\caption{}
+\label{fig.errdiff}
 \end{figure*}

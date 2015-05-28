@@ -1,0 +1,19 @@
+﻿\section{Learning curve for some steps for larger iteration}\label{app:conv}
+From Figure \ref{fig:errdiff} we can see that, training with enough iterations, warm start can still outperforms cold start.
+\begin{figure*}[htbp]
+\centering
+\subfigure{
+    \includegraphics[width=0.4\textwidth]{fig/50W.png}
+}
+\subfigure{
+    \includegraphics[width=0.4\textwidth]{fig/100W.png}
+}\\
+\subfigure{
+    \includegraphics[width=0.4\textwidth]{fig/150W.png}
+}
+\subfigure{
+    \includegraphics[width=0.4\textwidth]{fig/200W.png}
+}
+\caption{Overall learning curve in some steps for 300 iterations}
+\label{fig:errdiff}
+\end{figure*}
