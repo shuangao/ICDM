@@ -145,12 +145,12 @@ From Figure \ref{fig:wama} we can see that benefitting from warm start, classifi
 \begin{table*}[htbp]
   \centering
   \caption{Top-5 accuracy for 220 new categories in super-domain with different training iteration in each step.}
-    \begin{tabular}{C{1cm}cc|cc|cc}
+    \begin{tabular}{C{1cm}c|c|cc|cc}
     \toprule
-          &  \multicolumn{2}{c|}{20 iterations} &\multicolumn{2}{c|}{50 Iterations} & \multicolumn{2}{c}{300 iterations} \\
+          & 10 iterations&20 iterations &\multicolumn{2}{c|}{50 Iterations} & \multicolumn{2}{c}{300 iterations} \\
     \midrule
-          & warm start & cold start & warm start & cold start & warm start & cold start \\
-    Top-5&  60.54$\pm0.32$  &    N/A  &60.33$\pm$0.62   &     39.10$\pm$0.66   &    \textbf{61.48$\pm$0.59 }  & 55.35$\pm$0.48 \\
+          & warm start & warm start& warm start & cold start & warm start & cold start \\
+    Top-5& 60.37$\pm$ 0.58&60.54$\pm0.32$  &60.33$\pm$0.62   &     39.10$\pm$0.66   &    \textbf{61.48$\pm$0.59 }  & 55.35$\pm$0.48 \\
     \bottomrule
     \end{tabular}%
   \label{tab:it}%
