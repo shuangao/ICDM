@@ -364,7 +364,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Domain Adaptation for Food Recognition with Deep Neural Netwrok}
+\title{Adapting New Categories for Food Recognition with Deep Representation}
 
 
 % author names and affiliations
@@ -418,9 +418,9 @@ Email: cling@csd.uwo.ca}}
 
 
 \begin{abstract}
-Deep Convolutional Neural Network (CNN) has recently achieved great successes in large scale object recognition competitions and achieved the performance as good as human annotation. However, training deep CNN requires an ample amount of labeled examples and those large scale database could not include all the desired categories. Many domain adaptation techniques have been proposed to learn categories across domain, but limited to either identical/similar categories or insufficient data. We find that when labeled examples are sparse, some previous methods suffer with deep representation.
-In this paper, we first train our efficient feature extractor, fine-tuning GoogLeNet on Food-101 dataset and achieve state-of-the-art performance. Then we propose a method that can learn new categories from target domain with deep representations and warm start technique. Our method divides a multiple new category learning problem into several step and learns a single category in each step with warm start. Compared to cold start, in each learning step, classifier with warm start can achieve a better accuracy.
-Benefitting from the parameters warm started from previous step, our method can achieve better overall result with a few training iteration.  
+Deep Convolutional Neural Network (CNN) has recently achieved great successes in large scale object recognition competitions and achieved the performance as good as human annotation. However, training deep CNN requires an ample amount of labeled examples and those large scale database could not include all the categories people desire. Many domain adaptation techniques have been proposed to learn categories across domain, but limited to either identical/similar categories or insufficient data. We find that when labeled examples are sparse, some previous methods suffer with deep representation.
+In this paper, we first train our efficient feature extractor, fine-tuning GoogLeNet on Food-101 dataset and achieve state-of-the-art performance. Then we propose a method that can learn new categories from target domain with deep representations and warm start technique. Our method divides the multi new category learning problem into several steps and learns a single category in each step with warm start. Compared to cold start, in each learning step, classifiers with warm start can achieve a better accuracy.
+Benefitting from the parameters warm started from previous step, our method can achieve better overall result with a few training iteration.
 
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
@@ -456,9 +456,9 @@ Benefitting from the parameters warm started from previous step, our method can 
 %
 %\section{Experimental Setup}
 %\input{expsetup.tex}
-\section{Training Deep Feature Extractor}\label{sec:ft}
+\section{Deep Feature Extractor}\label{sec:ft}
 \input{discuss.tex}
-\section{Domain Adaptation}\label{sec:da}
+\section{Warm Start Domain Adaptation for Learning New Categories}\label{sec:da}
 \input{domain.tex}
 
 
