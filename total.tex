@@ -418,10 +418,8 @@ Email: cling@csd.uwo.ca}}
 
 
 \begin{abstract}
-Deep Convolutional Neural Network (CNN) has recently achieved great successes in large scale object recognition competitions and achieved the performance as good as human annotation. However, training deep CNN requires an ample amount of labeled examples and these large scale image database could not include all the categories people desire. Many domain adaptation techniques have been proposed to learn categories across domain, but limited to either identical/similar categories or insufficient data. We find that when labeled examples are sparse, some previous methods suffer with deep representation.
-In this paper, we first train our efficient feature extractor, fine-tuning GoogLeNet on Food-101 dataset and achieve state-of-the-art performance. Then we propose a method that can learn new categories from target domain with deep representations and warm start technique. Our method divides the multi new category learning problem into several steps and learns a single category in each step with warm start. Compared to cold start, in each learning step, classifiers with warm start can achieve a better accuracy.
-Benefitting from the parameters warm started from previous step, our method can achieve better overall result with a few training iteration.
-
+Learning to classify new categories from a different domain is always an interesting and challenging task in data mining. Previous domain adaptation approaches are limited to either from similar categories or requiring a large number of labeled examples. It would be ideal if we can learn to classify new categories with just a few labeled examples, assisted by examples of different domains. In this paper, we propose a new method that can solve this problem for food image recognition. Inspired by the idea of "warm start", we design an algorithm that can incrementally adapt to the new categories. Using the deep
+representation extracted from fine-tuned GoogLeNet, our method can learn efficient classifiers for new categories with fewer labeled examples. Experiment results show that warm start can achieve better accuracy than cold start with fewer training iteration for new categories. Our method has great potential to be deployed on a mobile health platform we are developing.
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
