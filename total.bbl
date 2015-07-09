@@ -111,10 +111,6 @@ N.~Zhang, J.~Donahue, R.~Girshick, and T.~Darrell, ``Part-based r-cnns for
   fine-grained category detection,'' in \emph{Computer Vision--ECCV
   2014}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2014, pp. 834--849.
 
-\bibitem{chuwarm}
-B.-Y. Chu, C.-H. Ho, C.-H. Tsai, C.-Y. Lin, and C.-J. Lin, ``Warm start for
-  parameter selection of linear classifiers.''
-
 \bibitem{yildirim2002warm}
 E.~A. Yildirim and S.~J. Wright, ``Warm-start strategies in interior-point
   methods for linear programming,'' \emph{SIAM Journal on Optimization},
@@ -131,6 +127,10 @@ M.~N. Zeilinger, C.~N. Jones, and M.~Morari, ``Real-time suboptimal model
   predictive control using a combination of explicit mpc and online
   optimization,'' \emph{Automatic Control, IEEE Transactions on}, vol.~56,
   no.~7, pp. 1524--1534, 2011.
+
+\bibitem{chuwarm}
+B.-Y. Chu, C.-H. Ho, C.-H. Tsai, C.-Y. Lin, and C.-J. Lin, ``Warm start for
+  parameter selection of linear classifiers.''
 
 \bibitem{kawano14c}
 Y.~Kawano and K.~Yanai, ``Automatic expansion of a food image dataset

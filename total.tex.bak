@@ -418,11 +418,11 @@ Email: cling@csd.uwo.ca}}
 
 
 \begin{abstract}
-Learning to classify new categories from a different domain is always an interesting and challenging task in data mining. The classifier could suffer from dataset bias when adapting new categories from target domain.
+Learning to classify new categories from a different domain is always an interesting and challenging task in data mining. The classifier could suffer from dataset bias when predicting new categories from the target domain.
 To adjust the bias, previous domain adaptation approaches are limited to either similar categories or requiring a large number of labeled examples from target domain.
 In this paper, we propose a new method that can alleviate dataset bias for food image recognition and adapt new food categories with fewer examples.
-To obtain less biased feature representation from food image, we fine-tuned GoogLeNet as our deep feature extractor. Using deep representation, our method can learn efficient classifiers with fewer labeled examples.
-Inspired by the idea of "warm start", our algorithm adapts one new category each time and iteratively updates classifiers for both learned and the new category. So it can incrementally adapt to multiple new food categories.
+To obtain less biased feature representation from food images, we fine-tuned GoogLeNet as our deep feature extractor. Using deep representation, our method can learn efficient classifiers with fewer labeled examples. We employ a negative classifier rejecting all learned categories and assume that 
+Inspired by the idea of "warm start", our algorithm adapts one new category each time and iteratively initialized the new category. So it can incrementally adapt to multiple new food categories.
 Experiment results show that warm start can achieve better accuracy compared to cold start (random initialization) for the multi-new category food recognition task.
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.

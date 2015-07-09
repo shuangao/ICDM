@@ -17,6 +17,7 @@
 \citation{NIPS2014_Zhou}
 \citation{srivastava2014dropout}
 \citation{zhang2014part}
+\citation{aytar2011tabula}
 \citation{yildirim2002warm}
 \citation{john2008implementation}
 \citation{zeilinger2011real}
@@ -31,7 +32,6 @@
 \citation{krizhevsky2012imagenet}
 \citation{linNiN}
 \citation{szegedy2014going}
-\citation{agrawal2014analyzing}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Background}{2}}
 \newlabel{sec:bg}{{II}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Food Datasets}{2}}
@@ -39,6 +39,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {III}Deep Feature Extractor}{2}}
 \newlabel{sec:ft}{{III}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Architecture of GoogLeNet}{2}}
+\citation{agrawal2014analyzing}
 \citation{glorot2010understanding}
 \citation{bossard14}
 \citation{singh2012unsupervised}
@@ -48,7 +49,6 @@
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Top-5 Accuracy for different deep cnn architectures}}{3}}
 \newlabel{tab:ft}{{I}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Discussion of the unique architecture of GoogLeNet}{3}}
-\newlabel{relu}{{1}{3}}
 \citation{Chatfield14}
 \citation{zeiler2014visualizing}
 \citation{hoffman2013one}
@@ -58,9 +58,9 @@
 \newlabel{tab:mini}{{III}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Visualization of some feature maps of GoogLeNet models in different layers for the same input image. 64 feature maps of each layer are shown. Conv1 is the first convolutional layer and Inception\_5b is the last convolutional layer. }}{4}}
 \newlabel{fig:sashimi}{{2}{4}}
+\newlabel{relu}{{1}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Warm Start Domain Adaptation for Learning New Categories}{4}}
 \newlabel{sec:da}{{IV}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Limits of previous approaches}{4}}
 \citation{yang2007adapting}
 \citation{aytar2011tabula}
 \citation{chuwarm}
@@ -70,50 +70,51 @@
 \newlabel{tab:cosa}{{V}{5}}
 \@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Sparsity of the output for each unit in GoogLeNet inception module for training data from Food101 in percent}}{5}}
 \newlabel{tab:sparse}{{VI}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Limits of previous approaches}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Incremental adaptive learning for new category}{5}}
 \citation{hoffman2013one}
 \@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Average Precision for A-SVM, PMT-SVM, SVM and Logistic Regression. Source categories without * are determined by cosine similarity}}{6}}
 \newlabel{tab:su_domian}{{VII}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces (a) Conventional adaptation method fail to find good initialization for the new category from source domain. (b) The parameters from $\mathaccent "705E\relax {f}$ are more adaptive for the new categories.}}{6}}
 \newlabel{fig:wm}{{3}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Experiment setup \& Evaluation}{6}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Complete algorithm of warm start adaptation}}{6}}
 \newlabel{algo:ws}{{1}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Experiment setup \& Evaluation}{6}}
 \bibstyle{IEEEtran}
 \bibdata{IEEEabrv,research}
 \bibcite{ben2007analysis}{1}
 \bibcite{blitzer2008learning}{2}
 \bibcite{daume2009frustratingly}{3}
-\bibcite{yang2007adapting}{4}
-\bibcite{aytar2011tabula}{5}
-\bibcite{lowe1999object}{6}
-\bibcite{bay2006surf}{7}
-\bibcite{dalal2005histograms}{8}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-D}}From 101 to 102 categories}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Accuracy for a single new target category in M+1 experiment. Average top-5 accuracies for some categories are shown. Last row shows the average results for all categories.}}{7}}
 \newlabel{tab:N+1}{{VIII}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-E}}From 101 to 101+220 categories}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion}{7}}
 \@writefile{toc}{\contentsline {section}{References}{7}}
+\bibcite{yang2007adapting}{4}
+\bibcite{aytar2011tabula}{5}
+\bibcite{lowe1999object}{6}
+\bibcite{bay2006surf}{7}
+\bibcite{dalal2005histograms}{8}
 \bibcite{krizhevsky2012imagenet}{9}
 \bibcite{zeiler2014visualizing}{10}
-\bibcite{simonyan2014very}{11}
-\bibcite{farabet2013learning}{12}
-\bibcite{Chatfield14}{13}
-\bibcite{hoffman2013one}{14}
-\bibcite{NIPS2014_Zhou}{15}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Top-5 accuracy curve for categories in Food-256 in super-domain with 5 shots. Mean and standard deviation are shown.}}{8}}
 \newlabel{fig:wama}{{4}{8}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Overall learning curve in some steps for 300 iterations. \textbf  {Observation:} even training with enough iteration, warm start can still outperform cold start in a single step.}}{8}}
 \newlabel{fig:errdiff}{{5}{8}}
 \@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Overall top-5 accuracy for 220 new categories in super-domain with different training iteration in each step.}}{8}}
 \newlabel{tab:it}{{IX}{8}}
+\bibcite{simonyan2014very}{11}
+\bibcite{farabet2013learning}{12}
+\bibcite{Chatfield14}{13}
+\bibcite{hoffman2013one}{14}
+\bibcite{NIPS2014_Zhou}{15}
 \bibcite{srivastava2014dropout}{16}
 \bibcite{zhang2014part}{17}
-\bibcite{chuwarm}{18}
-\bibcite{yildirim2002warm}{19}
-\bibcite{john2008implementation}{20}
-\bibcite{zeilinger2011real}{21}
+\bibcite{yildirim2002warm}{18}
+\bibcite{john2008implementation}{19}
+\bibcite{zeilinger2011real}{20}
+\bibcite{chuwarm}{21}
 \bibcite{kawano14c}{22}
 \bibcite{bossard14}{23}
 \bibcite{zeiler2010deconvolutional}{24}
