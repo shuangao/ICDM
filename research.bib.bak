@@ -844,3 +844,29 @@ publisher = {Curran Associates, Inc.},
   year={2012},
   organization={IEEE}
 }
+@inproceedings{fernando2013unsupervised,
+  title={Unsupervised visual domain adaptation using subspace alignment},
+  author={Fernando, Basura and Habrard, Amaury and Sebban, Marc and Tuytelaars, Tinne},
+  booktitle={Computer Vision (ICCV), 2013 IEEE International Conference on},
+  pages={2960--2967},
+  year={2013},
+  organization={IEEE}
+}
+@inproceedings{zeiler2010deconvolutional,
+  title={Deconvolutional networks},
+  author={Zeiler, Matthew D and Krishnan, Dilip and Taylor, Graham W and Fergus, Robert},
+  booktitle={Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on},
+  pages={2528--2535},
+  year={2010},
+  organization={IEEE}
+}
+@article{srivastava2014dropout,
+  title={Dropout: A simple way to prevent neural networks from overfitting},
+  author={Srivastava, Nitish and Hinton, Geoffrey and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan},
+  journal={The Journal of Machine Learning Research},
+  volume={15},
+  number={1},
+  pages={1929--1958},
+  year={2014},
+  publisher={JMLR. org}
+}

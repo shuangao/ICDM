@@ -418,10 +418,12 @@ Email: cling@csd.uwo.ca}}
 
 
 \begin{abstract}
-Deep Convolutional Neural Network (CNN) has recently achieved great successes in large scale object recognition competitions and achieved the performance as good as human annotation. However, training deep CNN requires an ample amount of labeled examples and those large scale database could not include all the categories people desire. Many domain adaptation techniques have been proposed to learn categories across domain, but limited to either identical/similar categories or insufficient data. We find that when labeled examples are sparse, some previous methods suffer with deep representation.
-In this paper, we first train our efficient feature extractor, fine-tuning GoogLeNet on Food-101 dataset and achieve state-of-the-art performance. Then we propose a method that can learn new categories from target domain with deep representations and warm start technique. Our method divides the multi new category learning problem into several steps and learns a single category in each step with warm start. Compared to cold start, in each learning step, classifiers with warm start can achieve a better accuracy.
-Benefitting from the parameters warm started from previous step, our method can achieve better overall result with a few training iteration.
-
+Learning to classify new categories from a different domain is always an interesting and challenging task in data mining. The classifier could suffer from dataset bias when adapting new categories from target domain.
+To adjust the bias, previous domain adaptation approaches are limited to either similar categories or requiring a large number of labeled examples from target domain.
+In this paper, we propose a new method that can alleviate dataset bias for food image recognition and adapt new food categories with fewer examples.
+To obtain less biased feature representation from food image, we fine-tuned GoogLeNet as our deep feature extractor. Using deep representation, our method can learn efficient classifiers with fewer labeled examples.
+Inspired by the idea of "warm start", our algorithm adapts one new category each time and iteratively updates classifiers for both learned and the new category. So it can incrementally adapt to multiple new food categories.
+Experiment results show that warm start can achieve better accuracy compared to cold start (random initialization) for the multi-new category food recognition task.
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -450,17 +452,14 @@ Benefitting from the parameters warm started from previous step, our method can 
 \section{Introduction}\label{sec:intro}
 % no \IEEEPARstart
 \input{intro.tex}
-
 \section{Background}\label{sec:bg}
 \input{background.tex}
-%
-%\section{Experimental Setup}
-%\input{expsetup.tex}
 \section{Deep Feature Extractor}\label{sec:ft}
 \input{discuss.tex}
 \section{Warm Start Domain Adaptation for Learning New Categories}\label{sec:da}
 \input{domain.tex}
-
+\section{Conclusion}
+\input{conclusion.tex}
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -546,8 +545,7 @@ Benefitting from the parameters warm started from previous step, our method can 
 
 
 
-\section{Conclusion}
-\input{conclusion.tex}
+
 
 
 
