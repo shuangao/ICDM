@@ -143,6 +143,11 @@ L.~Bossard, M.~Guillaumin, and L.~Van~Gool, ``Food-101 -- mining discriminative
   components with random forests,'' in \emph{European Conference on Computer
   Vision}, 2014.
 
+\bibitem{bossard2014food}
+------, ``Food-101--mining discriminative components with random forests,'' in
+  \emph{Computer Vision--ECCV 2014}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Springer, 2014, pp. 446--461.
+
 \bibitem{zeiler2010deconvolutional}
 M.~D. Zeiler, D.~Krishnan, G.~W. Taylor, and R.~Fergus, ``Deconvolutional
   networks,'' in \emph{Computer Vision and Pattern Recognition (CVPR), 2010

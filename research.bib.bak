@@ -860,13 +860,41 @@ publisher = {Curran Associates, Inc.},
   year={2010},
   organization={IEEE}
 }
-@article{srivastava2014dropout,
-  title={Dropout: A simple way to prevent neural networks from overfitting},
-  author={Srivastava, Nitish and Hinton, Geoffrey and Krizhevsky, Alex and Sutskever, Ilya and Salakhutdinov, Ruslan},
-  journal={The Journal of Machine Learning Research},
-  volume={15},
-  number={1},
-  pages={1929--1958},
+@article{yildirim2002warm,
+  title={Warm-start strategies in interior-point methods for linear programming},
+  author={Yildirim, E Alper and Wright, Stephen J},
+  journal={SIAM Journal on Optimization},
+  volume={12},
+  number={3},
+  pages={782--810},
+  year={2002},
+  publisher={SIAM}
+}
+@article{john2008implementation,
+  title={Implementation of warm-start strategies in interior-point methods for linear programming in fixed dimension},
+  author={John, Elizabeth and Y{\i}ld{\i}r{\i}m, E Alper},
+  journal={Computational Optimization and Applications},
+  volume={41},
+  number={2},
+  pages={151--183},
+  year={2008},
+  publisher={Springer}
+}
+@article{zeilinger2011real,
+  title={Real-time suboptimal model predictive control using a combination of explicit MPC and online optimization},
+  author={Zeilinger, Melanie Nicole and Jones, Colin Neil and Morari, Manfred},
+  journal={Automatic Control, IEEE Transactions on},
+  volume={56},
+  number={7},
+  pages={1524--1534},
+  year={2011},
+  publisher={IEEE}
+}
+@incollection{zhang2014part,
+  title={Part-based R-CNNs for fine-grained category detection},
+  author={Zhang, Ning and Donahue, Jeff and Girshick, Ross and Darrell, Trevor},
+  booktitle={Computer Vision--ECCV 2014},
+  pages={834--849},
   year={2014},
-  publisher={JMLR. org}
+  publisher={Springer}
 }

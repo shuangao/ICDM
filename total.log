@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  9 JUL 2015 16:24
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  13 JUL 2015 10:39
 entering extended mode
 **D:/LaTex_Files/ICDM/total.tex
 (D:/LaTex_Files/ICDM/total.tex
@@ -325,7 +325,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8 <D:/LaTex_Files/ICDM/fig/M+N.png> <D:/LaTex_Files/ICDM/fig/50W.png> <D:/LaT
 ex_Files/ICDM/fig/100W.png> <D:/LaTex_Files/ICDM/fig/150W.png> <D:/LaTex_Files/
-ICDM/fig/200W.png>])
+ICDM/fig/200W.png>]
+Underfull \hbox (badness 1796) in paragraph at lines 147--150
+[]\OT1/ptm/m/n/8 ------, ``Food-101--mining dis-crim-i-na-tive com-po-nents wit
+h ran-dom
+ []
+
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -341,10 +347,10 @@ Before submitting the final camera ready copy, remember to:
 
 ] (D:\LaTex_Files\ICDM\total.aux) ) 
 Here is how much of TeX's memory you used:
- 2669 strings out of 493921
- 38555 string characters out of 3152883
- 204295 words of memory out of 3000000
- 5929 multiletter control sequences out of 15000+200000
+ 2670 strings out of 493921
+ 38572 string characters out of 3152883
+ 204299 words of memory out of 3000000
+ 5930 multiletter control sequences out of 15000+200000
  43674 words of font info for 77 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
  27i,11n,24p,1641b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -359,7 +365,7 @@ ype1/public/amsfonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts
 /type1/urw/times/utmbi8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D
 :/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on total.pdf (9 pages, 887742 bytes).
+Output written on total.pdf (9 pages, 887881 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
