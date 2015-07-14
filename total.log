@@ -1,19 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.17)  13 JUL 2015 10:39
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.21)  13 JUL 2015 21:10
 entering extended mode
-**D:/LaTex_Files/ICDM/total.tex
-(D:/LaTex_Files/ICDM/total.tex
+**D:/用户目录/Desktop/paper/ICDM/total.tex
+(D:/用户目录/Desktop/paper/ICDM/total.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-(D:\LaTex_Files\ICDM\IEEEtran.cls
+Babel <v3.8m> and hyphenation patterns for loaded.
+(D:\用户目录\Desktop\paper\ICDM\IEEEtran.cls
 Document Class: IEEEtran 2012/11/21 V1.8c by Harald Hanche-Olsen and Anders Chr
 istensen
 -- Based on V1.7a by Michael Shell
@@ -26,7 +17,7 @@ istensen
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
 
-("D:\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+(C:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -99,39 +90,39 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count90
 \@IEEEtranrubishbin=\box26
-) ("D:\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+) (C:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("D:\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(C:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-("D:\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(C:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("D:\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(C:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("D:\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+(C:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("D:\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(C:\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("D:\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-("D:\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
 ))
 \Gin@req@height=\dimen117
 \Gin@req@width=\dimen118
 )
-("D:\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
+(C:\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen119
 \lightrulewidth=\dimen120
@@ -151,7 +142,7 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count95
 \@thisrulewidth=\dimen131
 )
-("D:\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+(C:\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip44
 \subfigcapskip=\skip45
@@ -167,15 +158,15 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-("D:\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+(C:\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
 \subfig@top=\skip48
 \subfig@bottom=\skip49
 )
-("D:\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
+(C:\CTEX\MiKTeX\tex\latex\lipsum\lipsum.sty
 Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count100
 )
-("D:\MiKTeX 2.9\tex\latex\tools\array.sty"
+(C:\CTEX\MiKTeX\tex\latex\tools\array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen134
 \extrarowheight=\dimen135
@@ -183,11 +174,11 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip50
 \backup@length=\skip51
 )
-("D:\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+(C:\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-("D:\MiKTeX 2.9\tex\latex\float\float.sty"
+(C:\CTEX\MiKTeX\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count101
 \float@exts=\toks17
@@ -195,13 +186,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks18
 \@floatcapt=\box28
 )
-("D:\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+(C:\CTEX\MiKTeX\tex\latex\base\ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks19
 \c@algorithm=\count102
 )
-("D:\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
+(C:\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@unique=\count103
 \c@ALC@line=\count104
@@ -210,7 +201,7 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip52
 \algorithmicindent=\skip53
 )
-(D:\LaTex_Files\ICDM\total.aux)
+(D:\用户目录\Desktop\paper\ICDM\total.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 363.
 LaTeX Font Info:    ... okay on input line 363.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 363.
@@ -223,7 +214,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 363.
 LaTeX Font Info:    ... okay on input line 363.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 363.
 LaTeX Font Info:    ... okay on input line 363.
- ("D:\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+(C:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count107
 \scratchdimen=\dimen136
@@ -236,14 +228,15 @@ LaTeX Font Info:    ... okay on input line 363.
 \MPnumerator=\count111
 \makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks21
-) (D:\LaTex_Files\ICDM\intro.tex
+) (D:\用户目录\Desktop\paper\ICDM\intro.tex
 Missing character: There is no � in font ptmr7t!
 Missing character: There is no � in font ptmr7t!
 Missing character: There is no � in font ptmr7t!
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+ [1{C:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 
-]) (D:\LaTex_Files\ICDM\background.tex
+])
+(D:\用户目录\Desktop\paper\ICDM\background.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -253,7 +246,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
 )
-(D:\LaTex_Files\ICDM\discuss.tex
+(D:\用户目录\Desktop\paper\ICDM\discuss.tex
 Missing character: There is no � in font ptmr7t!
 Missing character: There is no � in font ptmr7t!
 Missing character: There is no � in font ptmr7t!
@@ -268,26 +261,29 @@ Overfull \hbox (4.40962pt too wide) in paragraph at lines 11--11
  [][] 
  []
 
+
+LaTeX Warning: Citation `bossard14' on page 3 undefined on input line 43.
+
 <fig/sashimi.png, id=14, 727.96968pt x 319.1925pt>
 File: fig/sashimi.png Graphic file (type png)
  <use fig/sashimi.png>
 Package pdftex.def Info: fig/sashimi.png used on input line 71.
 (pdftex.def)             Requested size: 363.98395pt x 159.59586pt.
 
-[3 <D:/LaTex_Files/ICDM/fig/inception.pdf>]) (D:\LaTex_Files\ICDM\domain.tex
+[3 <D:/用户目录/Desktop/paper/ICDM/fig/inception.pdf>])
+(D:\用户目录\Desktop\paper\ICDM\domain.tex
 Missing character: There is no � in font ptmr7t!
 Missing character: There is no � in font ptmr7t!
 Missing character: There is no � in font ptmr7t!
-
-[4 <D:/LaTex_Files/ICDM/fig/sashimi.png>]
-<fig/domain.jpg, id=37, 588.69937pt x 191.21437pt>
+ [4 <D:/用户目录/Desktop/paper/ICDM/fig/sashimi.png>] <fig/domain.jpg, id=3
+7, 588.69937pt x 191.21437pt>
 File: fig/domain.jpg Graphic file (type jpg)
- <use fig/domain.jpg>
+
+<use fig/domain.jpg>
 Package pdftex.def Info: fig/domain.jpg used on input line 67.
 (pdftex.def)             Requested size: 353.22234pt x 114.72949pt.
-
-[5] [6 <D:/LaTex_Files/ICDM/fig/domain.jpg>]
-<fig/M+N.png, id=45, 844.1136pt x 431.4519pt>
+ [5] [6 <D:/用户目录/Desktop/paper/ICDM/fig/domain.jpg>] <fig/M+N.png, id=4
+5, 844.1136pt x 431.4519pt>
 File: fig/M+N.png Graphic file (type png)
  <use fig/M+N.png>
 Package pdftex.def Info: fig/M+N.png used on input line 118.
@@ -317,21 +313,17 @@ File: fig/200W.png Graphic file (type png)
 Package pdftex.def Info: fig/200W.png used on input line 137.
 (pdftex.def)             Requested size: 157.23152pt x 117.32967pt.
 )
-(D:\LaTex_Files\ICDM\conclusion.tex) (D:\LaTex_Files\ICDM\total.bbl [7]
+(D:\用户目录\Desktop\paper\ICDM\conclusion.tex)
+(D:\用户目录\Desktop\paper\ICDM\total.bbl [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2012) has occurred while \output is active []
 
- [8 <D:/LaTex_Files/ICDM/fig/M+N.png> <D:/LaTex_Files/ICDM/fig/50W.png> <D:/LaT
-ex_Files/ICDM/fig/100W.png> <D:/LaTex_Files/ICDM/fig/150W.png> <D:/LaTex_Files/
-ICDM/fig/200W.png>]
-Underfull \hbox (badness 1796) in paragraph at lines 147--150
-[]\OT1/ptm/m/n/8 ------, ``Food-101--mining dis-crim-i-na-tive com-po-nents wit
-h ran-dom
- []
-
-)
+ [8 <D:/用户目录/Desktop/paper/ICDM/fig/M+N.png> <D:/用户目录/Desktop/p
+aper/ICDM/fig/50W.png> <D:/用户目录/Desktop/paper/ICDM/fig/100W.png> <D:/�
+�户目录/Desktop/paper/ICDM/fig/150W.png> <D:/用户目录/Desktop/paper/ICDM
+/fig/200W.png>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -345,27 +337,31 @@ Before submitting the final camera ready copy, remember to:
 
 [9
 
-] (D:\LaTex_Files\ICDM\total.aux) ) 
+] (D:\用户目录\Desktop\paper\ICDM\total.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2670 strings out of 493921
- 38572 string characters out of 3152883
- 204299 words of memory out of 3000000
- 5930 multiletter control sequences out of 15000+200000
+ 2665 strings out of 495354
+ 38841 string characters out of 3183859
+ 203005 words of memory out of 3000000
+ 5799 multiletter control sequences out of 15000+200000
  43674 words of font info for 77 fonts, out of 3000000 for 9000
- 844 hyphenation exceptions out of 8191
- 27i,11n,24p,1641b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.e
-nc}<D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmi10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmmi7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-<D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts
-/type1/urw/times/utmbi8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D
-:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on total.pdf (9 pages, 887881 bytes).
+ 17 hyphenation exceptions out of 8191
+ 27i,11n,24p,1656b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
+i10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/CTEX/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
+:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/CTEX/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/CTEX/Mi
+KTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utm
+bi8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on total.pdf (9 pages, 888433 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

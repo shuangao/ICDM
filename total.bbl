@@ -31,22 +31,6 @@ J.~Blitzer, K.~Crammer, A.~Kulesza, F.~Pereira, and J.~Wortman, ``Learning
   bounds for domain adaptation,'' in \emph{Advances in neural information
   processing systems}, 2008, pp. 129--136.
 
-\bibitem{daume2009frustratingly}
-H.~Daum{\'e}~III, ``Frustratingly easy domain adaptation,'' \emph{arXiv
-  preprint arXiv:0907.1815}, 2009.
-
-\bibitem{yang2007adapting}
-J.~Yang, R.~Yan, and A.~G. Hauptmann, ``Adapting svm classifiers to data with
-  shifted distributions,'' in \emph{Data Mining Workshops, 2007. ICDM Workshops
-  2007. Seventh IEEE International Conference on}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2007, pp. 69--76.
-
-\bibitem{aytar2011tabula}
-Y.~Aytar and A.~Zisserman, ``Tabula rasa: Model transfer for object category
-  detection,'' in \emph{Computer Vision (ICCV), 2011 IEEE International
-  Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp.
-  2252--2259.
-
 \bibitem{lowe1999object}
 D.~G. Lowe, ``Object recognition from local scale-invariant features,'' in
   \emph{Computer vision, 1999. The proceedings of the seventh IEEE
@@ -111,6 +95,22 @@ N.~Zhang, J.~Donahue, R.~Girshick, and T.~Darrell, ``Part-based r-cnns for
   fine-grained category detection,'' in \emph{Computer Vision--ECCV
   2014}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2014, pp. 834--849.
 
+\bibitem{daume2009frustratingly}
+H.~Daum{\'e}~III, ``Frustratingly easy domain adaptation,'' \emph{arXiv
+  preprint arXiv:0907.1815}, 2009.
+
+\bibitem{yang2007adapting}
+J.~Yang, R.~Yan, and A.~G. Hauptmann, ``Adapting svm classifiers to data with
+  shifted distributions,'' in \emph{Data Mining Workshops, 2007. ICDM Workshops
+  2007. Seventh IEEE International Conference on}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2007, pp. 69--76.
+
+\bibitem{aytar2011tabula}
+Y.~Aytar and A.~Zisserman, ``Tabula rasa: Model transfer for object category
+  detection,'' in \emph{Computer Vision (ICCV), 2011 IEEE International
+  Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp.
+  2252--2259.
+
 \bibitem{yildirim2002warm}
 E.~A. Yildirim and S.~J. Wright, ``Warm-start strategies in interior-point
   methods for linear programming,'' \emph{SIAM Journal on Optimization},
@@ -138,15 +138,10 @@ Y.~Kawano and K.~Yanai, ``Automatic expansion of a food image dataset
   ECCV Workshop on Transferring and Adapting Source Knowledge in Computer
   Vision (TASK-CV)}, 2014.
 
-\bibitem{bossard14}
-L.~Bossard, M.~Guillaumin, and L.~Van~Gool, ``Food-101 -- mining discriminative
-  components with random forests,'' in \emph{European Conference on Computer
-  Vision}, 2014.
-
 \bibitem{bossard2014food}
-------, ``Food-101--mining discriminative components with random forests,'' in
-  \emph{Computer Vision--ECCV 2014}.\hskip 1em plus 0.5em minus 0.4em\relax
-  Springer, 2014, pp. 446--461.
+L.~Bossard, M.~Guillaumin, and L.~Van~Gool, ``Food-101--mining discriminative
+  components with random forests,'' in \emph{Computer Vision--ECCV 2014}.\hskip
+  1em plus 0.5em minus 0.4em\relax Springer, 2014, pp. 446--461.
 
 \bibitem{zeiler2010deconvolutional}
 M.~D. Zeiler, D.~Krishnan, G.~W. Taylor, and R.~Fergus, ``Deconvolutional
