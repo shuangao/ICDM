@@ -132,16 +132,16 @@ M.~N. Zeilinger, C.~N. Jones, and M.~Morari, ``Real-time suboptimal model
 B.-Y. Chu, C.-H. Ho, C.-H. Tsai, C.-Y. Lin, and C.-J. Lin, ``Warm start for
   parameter selection of linear classifiers.''
 
+\bibitem{bossard2014food}
+L.~Bossard, M.~Guillaumin, and L.~Van~Gool, ``Food-101--mining discriminative
+  components with random forests,'' in \emph{Computer Vision--ECCV 2014}.\hskip
+  1em plus 0.5em minus 0.4em\relax Springer, 2014, pp. 446--461.
+
 \bibitem{kawano14c}
 Y.~Kawano and K.~Yanai, ``Automatic expansion of a food image dataset
   leveraging existing categories with domain adaptation,'' in \emph{Proc. of
   ECCV Workshop on Transferring and Adapting Source Knowledge in Computer
   Vision (TASK-CV)}, 2014.
-
-\bibitem{bossard2014food}
-L.~Bossard, M.~Guillaumin, and L.~Van~Gool, ``Food-101--mining discriminative
-  components with random forests,'' in \emph{Computer Vision--ECCV 2014}.\hskip
-  1em plus 0.5em minus 0.4em\relax Springer, 2014, pp. 446--461.
 
 \bibitem{zeiler2010deconvolutional}
 M.~D. Zeiler, D.~Krishnan, G.~W. Taylor, and R.~Fergus, ``Deconvolutional
@@ -154,14 +154,14 @@ D.~C. Ciresan, U.~Meier, J.~Masci, L.~M. Gambardella, and J.~Schmidhuber,
   ``Flexible, high performance convolutional neural networks for image
   classification,'' in \emph{IJCAI}, 2011, pp. 1237--1242.
 
-\bibitem{linNiN}
-M.~Lin, Q.~Chen, and S.~Yan, ``Network in network,'' \emph{CoRR}, vol.
-  abs/1312.4400, 2013.
-
 \bibitem{szegedy2014going}
 C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
   V.~Vanhoucke, and A.~Rabinovich, ``Going deeper with convolutions,''
   \emph{arXiv preprint arXiv:1409.4842}, 2014.
+
+\bibitem{linNiN}
+M.~Lin, Q.~Chen, and S.~Yan, ``Network in network,'' \emph{CoRR}, vol.
+  abs/1312.4400, 2013.
 
 \bibitem{agrawal2014analyzing}
 P.~Agrawal, R.~Girshick, and J.~Malik, ``Analyzing the performance of
@@ -178,5 +178,22 @@ X.~Glorot and Y.~Bengio, ``Understanding the difficulty of training deep
 S.~Singh, A.~Gupta, and A.~A. Efros, ``Unsupervised discovery of mid-level
   discriminative patches,'' in \emph{Computer Vision--ECCV 2012}.\hskip 1em
   plus 0.5em minus 0.4em\relax Springer, 2012, pp. 73--86.
+
+\bibitem{razavian2014cnn}
+A.~S. Razavian, H.~Azizpour, J.~Sullivan, and S.~Carlsson, ``Cnn features
+  off-the-shelf: an astounding baseline for recognition,'' in \emph{Computer
+  Vision and Pattern Recognition Workshops (CVPRW), 2014 IEEE Conference
+  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2014, pp. 512--519.
+
+\bibitem{NairH10}
+V.~Nair and G.~E. Hinton, ``Rectified linear units improve restricted boltzmann
+  machines,'' in \emph{ICML}, 2010, pp. 807--814.
+
+\bibitem{jia2014caffe}
+Y.~Jia, E.~Shelhamer, J.~Donahue, S.~Karayev, J.~Long, R.~Girshick,
+  S.~Guadarrama, and T.~Darrell, ``Caffe: Convolutional architecture for fast
+  feature embedding,'' in \emph{Proceedings of the ACM International Conference
+  on Multimedia}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2014, pp.
+  675--678.
 
 \end{thebibliography}

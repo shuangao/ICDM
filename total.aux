@@ -24,8 +24,8 @@
 \citation{chuwarm}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
 \newlabel{sec:intro}{{I}{1}}
-\citation{kawano14c}
 \citation{bossard2014food}
+\citation{kawano14c}
 \citation{bossard2014food}
 \citation{zeiler2014visualizing}
 \citation{simonyan2014very}
@@ -33,6 +33,7 @@
 \citation{krizhevsky2012imagenet}
 \citation{CiresanIJCAI11}
 \citation{krizhevsky2012imagenet}
+\citation{szegedy2014going}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Background}{2}}
 \newlabel{sec:bg}{{II}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Food Datasets}{2}}
@@ -42,55 +43,69 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Architecture of GoogLeNet}{2}}
 \citation{linNiN}
 \citation{szegedy2014going}
+\citation{krizhevsky2012imagenet}
 \citation{agrawal2014analyzing}
 \citation{glorot2010understanding}
-\citation{bossard14}
+\citation{bossard2014food}
 \citation{singh2012unsupervised}
+\citation{farabet2013learning}
+\citation{zhang2014part}
+\citation{razavian2014cnn}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Inception Module. $n\times n$ stands for size $n$ receptive field, $n\times n\_reduce$ stands for the $1\times 1$ convolutional layer before the $n\times n$ convolution layer and $pool\_proj$ is another $1\times 1$ convolutional layer after the MAX pooling layer. The output layer concatenates all its input layers.}}{3}}
 \newlabel{incept}{{1}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Pre-training and Fine-tuning GoogLeNet}{3}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Top-5 Accuracy for different deep cnn architectures}}{3}}
 \newlabel{tab:ft}{{I}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Discussion of the unique architecture of GoogLeNet}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Advantage of GoogLeNet for fine-tuning}{3}}
+\citation{krizhevsky2012imagenet}
+\citation{simonyan2014very}
+\citation{glorot2010understanding}
+\citation{NairH10}
 \@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Top-1 accuracy compared to other methods on Food-101 dataset in percent}}{4}}
 \newlabel{tab:101}{{II}{4}}
 \@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Accuracy for different number of examples in each category}}{4}}
 \newlabel{tab:mini}{{III}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Visualization of some feature maps of GoogLeNet models in different layers for the same input image. 64 feature maps of each layer are shown. Conv1 is the first convolutional layer and Inception\_5b is the last convolutional layer. }}{4}}
 \newlabel{fig:sashimi}{{2}{4}}
-\newlabel{relu}{{1}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Warm Start Domain Adaptation for Learning New Categories}{4}}
-\newlabel{sec:da}{{IV}{4}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Cosine similarity of the weights for similar foods}}{4}}
+\newlabel{tab:weight_sim}{{IV}{4}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Average cosine similarity of the representation for similar foods}}{4}}
+\newlabel{tab:pre_sim}{{V}{4}}
 \citation{Chatfield14}
 \citation{zeiler2014visualizing}
 \citation{hoffman2013one}
+\citation{srivastava2014dropout}
 \citation{yang2007adapting}
 \citation{aytar2011tabula}
+\citation{aytar2011tabula}
 \citation{chuwarm}
-\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Cosine similarity of the layers in inception modules between fine-tuned models and pre-trained model for GoogLeNet}}{5}}
-\newlabel{tab:cosg}{{IV}{5}}
-\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Cosine similarity of the layers between fine-tuned models and pre-trained model for AlexNet}}{5}}
-\newlabel{tab:cosa}{{V}{5}}
-\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Sparsity of the output for each unit in GoogLeNet inception module for training data from Food101 in percent}}{5}}
-\newlabel{tab:sparse}{{VI}{5}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Cosine similarity of the layers in inception modules between fine-tuned models and pre-trained model for GoogLeNet}}{5}}
+\newlabel{tab:cosg}{{VI}{5}}
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Cosine similarity of the layers between fine-tuned models and pre-trained model for AlexNet}}{5}}
+\newlabel{tab:cosa}{{VII}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Warm Start Domain Adaptation for Learning New Categories}{5}}
+\newlabel{sec:da}{{IV}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Limits of previous approaches}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Incremental adaptive learning for new category}{5}}
 \citation{hoffman2013one}
-\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Average Precision for A-SVM, PMT-SVM, SVM and Logistic Regression. Source categories without * are determined by cosine similarity}}{6}}
-\newlabel{tab:su_domian}{{VII}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces (a) Conventional adaptation method fail to find good initialization for the new category from source domain. (b) The parameters from $\mathaccent "705E\relax {f}$ are more adaptive for the new categories.}}{6}}
-\newlabel{fig:wm}{{3}{6}}
+\citation{jia2014caffe}
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Average Precision for A-SVM, PMT-SVM, SVM and Logistic Regression trained with deep representation. Source categories without * are determined by cosine similarity}}{6}}
+\newlabel{tab:su_domian}{{VIII}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Experiment setup \& Evaluation}{6}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Complete algorithm of warm start adaptation}}{6}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Warm start adaptation with negative classifier}}{6}}
 \newlabel{algo:ws}{{1}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-D}}Adapting single new categories}{6}}
 \bibstyle{IEEEtran}
 \bibdata{IEEEabrv,research}
 \bibcite{ben2007analysis}{1}
 \bibcite{blitzer2008learning}{2}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-D}}From 101 to 102 categories}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Accuracy for a single new target category in M+1 experiment. Average top-5 accuracies for some categories are shown. Last row shows the average results for all categories.}}{7}}
-\newlabel{tab:N+1}{{VIII}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-E}}From 101 to 101+220 categories}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces (a) Conventional adaptation method fail to find good initialization for the new category from source domain. (b) The parameters from $\mathaccent "705E\relax {f}$ are more adaptive for the new categories.}}{7}}
+\newlabel{fig:wm}{{3}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Some results of top-5 Accuracy for adapting single new category.}}{7}}
+\newlabel{tab:N+1}{{IX}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-E}}Adapting all new categories}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces Overall top-5 accuracy for adapted categories in learned categories with different training iteration in each step.}}{7}}
+\newlabel{tab:it}{{X}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion}{7}}
 \@writefile{toc}{\contentsline {section}{References}{7}}
 \bibcite{lowe1999object}{3}
@@ -101,15 +116,13 @@
 \bibcite{simonyan2014very}{8}
 \bibcite{farabet2013learning}{9}
 \bibcite{Chatfield14}{10}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Top-5 accuracy curve for categories in Food-256 in super-domain with 5 shots. Mean and standard deviation are shown.}}{8}}
-\newlabel{fig:wama}{{4}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Overall learning curve in some steps for 300 iterations. \textbf  {Observation:} even training with enough iteration, warm start can still outperform cold start in a single step.}}{8}}
-\newlabel{fig:errdiff}{{5}{8}}
-\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Overall top-5 accuracy for 220 new categories in super-domain with different training iteration in each step.}}{8}}
-\newlabel{tab:it}{{IX}{8}}
 \bibcite{hoffman2013one}{11}
 \bibcite{NIPS2014_Zhou}{12}
 \bibcite{srivastava2014dropout}{13}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Top-5 accuracy curve for categories in Food-220 in super-domain with 5 shots. Mean and standard deviation are shown.}}{8}}
+\newlabel{fig:wama}{{4}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Overall learning curve in some steps for 300 iterations. \textbf  {Observation:} even training with enough iteration, warm start can still outperform cold start in a single step.}}{8}}
+\newlabel{fig:errdiff}{{5}{8}}
 \bibcite{zhang2014part}{14}
 \bibcite{daume2009frustratingly}{15}
 \bibcite{yang2007adapting}{16}
@@ -118,12 +131,15 @@
 \bibcite{john2008implementation}{19}
 \bibcite{zeilinger2011real}{20}
 \bibcite{chuwarm}{21}
-\bibcite{kawano14c}{22}
-\bibcite{bossard2014food}{23}
+\bibcite{bossard2014food}{22}
+\bibcite{kawano14c}{23}
 \bibcite{zeiler2010deconvolutional}{24}
 \bibcite{CiresanIJCAI11}{25}
-\bibcite{linNiN}{26}
-\bibcite{szegedy2014going}{27}
+\bibcite{szegedy2014going}{26}
+\bibcite{linNiN}{27}
 \bibcite{agrawal2014analyzing}{28}
 \bibcite{glorot2010understanding}{29}
 \bibcite{singh2012unsupervised}{30}
+\bibcite{razavian2014cnn}{31}
+\bibcite{NairH10}{32}
+\bibcite{jia2014caffe}{33}
