@@ -136,7 +136,7 @@ When there are multiple categories in target domain, our method divides the lear
 
 From Table \ref{tab:N+1} we can see that by taking advantage of the warm started parameters from negative classifier, the warm start classifiers does a slightly better than cold start ones in this experiment. Even though the difference of these two method is small after adapting just one category, we believe the margin of these two methods would increase as more new categories are learned.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Adapting all new categories}
+\subsection{Adapting multiple new categories}
 In this part, we show the performance of warm start in adapting multiple new categories situation. From the experiments above, warm start shows some improvement on cold start and in this part, we show that the improvement can be accumulated as more categories are learned and our method can outperform cold start with larger margin. In order to get consistent results, we have to add the new categories according to certain sequence in each step.
 This sequence is determined by its original class index in Food-220. We run this experiment 10 times to eliminate the randomness caused by the training set and show the average results for both warm and cold start in Figure \ref{fig:wama} .
 
@@ -147,8 +147,8 @@ This sequence is determined by its original class index in Food-220. We run this
       \label{fig:wama}
 \end{figure*}
 
-From Figure \ref{fig:wama} we can see that benefitting from warm start, classifiers can benefit from the "good" parameters of the previous step and thus the margin between warm and cold starts increases as more new categories are learned. 
-Moreover, we find that in each step warm started classifier converges better than cold start. We select some steps and show their learning curve in Figure \ref{fig:errdiff}. From Figure \ref{fig:errdiff} we can see that by taking advantage of the parameters from negative classifier, warm started classifier converges much faster than cold start. 
+From Figure \ref{fig:wama} we can see that benefitting from warm start, classifiers can benefit from the "good" parameters of the previous step and thus the margin between warm and cold starts increases as more new categories are learned.
+Moreover, we find that in each step warm started classifier converges better than cold start. We select some steps and show their learning curve in Figure \ref{fig:errdiff}. From Figure \ref{fig:errdiff} we can see that by taking advantage of the parameters from negative classifier, warm started classifier converges much faster than cold start.
 We also compare performance of our method using different training iteration and show the results after adapting all new categories in Table \ref{tab:it}. From Table \ref{tab:it} we can see that even training with 10 iterations, warm started classifier can still reach competitive results. All these evidences indicate that warm start the parameters from the negative classifier can help the model to achieve better results with fewer training iteration.
 
 %Indeed, cold start may not converge well for just 50 iterations. We believe that given enough training iteration, warm start can still converge to a better result (see Figure \ref{fig:errdiff}). We compare the results for different iterations and the average performance of 10 experiments are shown in Table \ref{tab:it}. The results of cold start in 10 and 20 iterations experiments, which are not even significantly better than random guess, are ignored. We observe that increasing training iteration won't help improve the performance of warm start very much as it converges very fast by taking advantage of better initialization.
