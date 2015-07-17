@@ -29,8 +29,8 @@
 \citation{bossard2014food}
 \citation{zeiler2014visualizing}
 \citation{simonyan2014very}
-\citation{zeiler2010deconvolutional}
 \citation{krizhevsky2012imagenet}
+\citation{zeiler2010deconvolutional}
 \citation{CiresanIJCAI11}
 \citation{krizhevsky2012imagenet}
 \citation{szegedy2014going}
@@ -56,7 +56,8 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Pre-training and Fine-tuning GoogLeNet}{3}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Top-5 Accuracy for different deep cnn architectures}}{3}}
 \newlabel{tab:ft}{{I}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Advantage of GoogLeNet for fine-tuning}{3}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Cosine similarity of the weights for similar foods}}{3}}
+\newlabel{tab:weight_sim}{{IV}{3}}
 \citation{krizhevsky2012imagenet}
 \citation{simonyan2014very}
 \citation{glorot2010understanding}
@@ -67,10 +68,11 @@
 \newlabel{tab:mini}{{III}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Visualization of some feature maps of GoogLeNet models in different layers for the same input image. 64 feature maps of each layer are shown. Conv1 is the first convolutional layer and Inception\_5b is the last convolutional layer. }}{4}}
 \newlabel{fig:sashimi}{{2}{4}}
-\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Cosine similarity of the weights for similar foods}}{4}}
-\newlabel{tab:weight_sim}{{IV}{4}}
 \@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Average cosine similarity of the representation for similar foods}}{4}}
 \newlabel{tab:pre_sim}{{V}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Advantage of GoogLeNet for fine-tuning}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Warm Start Domain Adaptation for Learning New Categories}{4}}
+\newlabel{sec:da}{{IV}{4}}
 \citation{Chatfield14}
 \citation{zeiler2014visualizing}
 \citation{hoffman2013one}
@@ -83,52 +85,50 @@
 \newlabel{tab:cosg}{{VI}{5}}
 \@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Cosine similarity of the layers between fine-tuned models and pre-trained model for AlexNet}}{5}}
 \newlabel{tab:cosa}{{VII}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Warm Start Domain Adaptation for Learning New Categories}{5}}
-\newlabel{sec:da}{{IV}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Limits of previous approaches}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Incremental adaptive learning for new category}{5}}
 \citation{hoffman2013one}
 \citation{jia2014caffe}
 \@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Average Precision for A-SVM, PMT-SVM, SVM and Logistic Regression trained with deep representation. Source categories without * are determined by cosine similarity}}{6}}
 \newlabel{tab:su_domian}{{VIII}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Experiment setup \& Evaluation}{6}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Warm start adaptation with negative classifier}}{6}}
 \newlabel{algo:ws}{{1}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Experiment setup \& Evaluation}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-D}}Adapting single new categories}{6}}
 \bibstyle{IEEEtran}
 \bibdata{IEEEabrv,research}
 \bibcite{ben2007analysis}{1}
 \bibcite{blitzer2008learning}{2}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces (a) Conventional adaptation method fail to find good initialization for the new category from source domain. (b) The parameters from $\mathaccent "705E\relax {f}$ are more adaptive for the new categories.}}{7}}
-\newlabel{fig:wm}{{3}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Some results of top-5 Accuracy for adapting single new category.}}{7}}
-\newlabel{tab:N+1}{{IX}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-E}}Adapting all new categories}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces Overall top-5 accuracy for adapted categories in learned categories with different training iteration in each step.}}{7}}
-\newlabel{tab:it}{{X}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion}{7}}
-\@writefile{toc}{\contentsline {section}{References}{7}}
 \bibcite{lowe1999object}{3}
 \bibcite{bay2006surf}{4}
 \bibcite{dalal2005histograms}{5}
 \bibcite{krizhevsky2012imagenet}{6}
 \bibcite{zeiler2014visualizing}{7}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces (a) Conventional adaptation method fail to find good initialization for the new category from source domain. (b) The parameters from $\mathaccent "705E\relax {f}$ are more adaptive for the new categories.}}{7}}
+\newlabel{fig:wm}{{3}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Some results of top-5 Accuracy for adapting single new category.}}{7}}
+\newlabel{tab:N+1}{{IX}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-E}}Adapting all new categories}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces Overall top-5 accuracy for adapted categories in learned categories with different training iteration in each step.}}{7}}
+\newlabel{tab:it}{{X}{7}}
+\@writefile{toc}{\contentsline {section}{References}{7}}
 \bibcite{simonyan2014very}{8}
 \bibcite{farabet2013learning}{9}
 \bibcite{Chatfield14}{10}
 \bibcite{hoffman2013one}{11}
 \bibcite{NIPS2014_Zhou}{12}
 \bibcite{srivastava2014dropout}{13}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Top-5 accuracy curve for categories in Food-220 in super-domain with 5 shots. Mean and standard deviation are shown.}}{8}}
-\newlabel{fig:wama}{{4}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Overall learning curve in some steps for 300 iterations. \textbf  {Observation:} even training with enough iteration, warm start can still outperform cold start in a single step.}}{8}}
-\newlabel{fig:errdiff}{{5}{8}}
 \bibcite{zhang2014part}{14}
 \bibcite{daume2009frustratingly}{15}
 \bibcite{yang2007adapting}{16}
 \bibcite{aytar2011tabula}{17}
 \bibcite{yildirim2002warm}{18}
 \bibcite{john2008implementation}{19}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Top-5 accuracy curve for categories in Food-220 in super-domain with 5 shots. Mean and standard deviation are shown.}}{8}}
+\newlabel{fig:wama}{{4}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Overall learning curve in some steps for 300 iterations. \textbf  {Observation:} even training with enough iteration, warm start can still outperform cold start in a single step.}}{8}}
+\newlabel{fig:errdiff}{{5}{8}}
 \bibcite{zeilinger2011real}{20}
 \bibcite{chuwarm}{21}
 \bibcite{bossard2014food}{22}
