@@ -418,14 +418,14 @@ Email: cling@csd.uwo.ca}}
 
 
 \begin{abstract}
-Learning to classify new (target) categories from a different domain is always an interesting and challenging task in data mining. The classifier could suffer from dataset bias when predicting new categories from target domain.
-Many adaptation methods have been proposed to adjust this bias but are limited to either similar categories or requiring a large number of labeled examples from target domain.
+Learning to classify new (target) categories from a different domain is always an interesting and challenging task in data mining. The classifier could suffer from dataset bias when predicting the new categories from target domain.
+Many adaptation methods have been proposed to adjust this bias but are limited to either similar categories or requiring a large number of labeled examples from the target domain.
 Automatically adapting and recognizing new food categories is a very practical task in daily life. 
-In this paper, we propose a new method that can alleviate dataset bias for food image recognition with a few examples.
-To obtain less biased feature representation from food images, we fine-tuned GoogLeNet as our deep feature extractor. Using deep representation, our method can learn efficient classifiers with a few labeled examples.
-To better adapting a new category, we propose a new method that employs an external classifier for adaptation, called "negative classifier".
-Experiment results show that initializing the classifier of new category with the parameters of the negative classifier can achieve better performance.
-With multiple new categories, our algorithm learns one new category in each step and iteratively adapts all categories. We find that our method outperforms the baseline in this paper with larger margin as more new categories are learned.
+In this paper, we propose a new method that can alleviate the dataset bias for food image recognition. 
+To obtain less biased feature representation from the food images, we fine-tuned GoogLeNet as our deep feature extractor and achieve state-of-the-art performance on Food-101 dataset. Using the deep representation, our method can learn efficient classifiers with fewer labeled examples.
+More specifically, our method employs an external classifier for adaptation, called "negative classifier".
+Experiment results show that utilizing the parameters of the negative classifier, our method can achieve better performance and converges faster to adapt new categories.
+%When adapting multiple new categories, we find that our method outperforms the baseline with larger margin as more new categories are learned.
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -456,7 +456,7 @@ With multiple new categories, our algorithm learns one new category in each step
 \input{intro.tex}
 \section{Background}\label{sec:bg}
 \input{background.tex}
-\section{Deep Feature Extractor}\label{sec:ft}
+\section{Training Deep Feature Extractor}\label{sec:ft}
 \input{discuss.tex}
 \section{Warm Start Domain Adaptation for Learning New Categories}\label{sec:da}
 \input{domain.tex}
