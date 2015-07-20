@@ -154,6 +154,13 @@ D.~C. Ciresan, U.~Meier, J.~Masci, L.~M. Gambardella, and J.~Schmidhuber,
   ``Flexible, high performance convolutional neural networks for image
   classification,'' in \emph{IJCAI}, 2011, pp. 1237--1242.
 
+\bibitem{jia2014caffe}
+Y.~Jia, E.~Shelhamer, J.~Donahue, S.~Karayev, J.~Long, R.~Girshick,
+  S.~Guadarrama, and T.~Darrell, ``Caffe: Convolutional architecture for fast
+  feature embedding,'' in \emph{Proceedings of the ACM International Conference
+  on Multimedia}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2014, pp.
+  675--678.
+
 \bibitem{szegedy2014going}
 C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
   V.~Vanhoucke, and A.~Rabinovich, ``Going deeper with convolutions,''
@@ -188,12 +195,5 @@ A.~S. Razavian, H.~Azizpour, J.~Sullivan, and S.~Carlsson, ``Cnn features
 \bibitem{NairH10}
 V.~Nair and G.~E. Hinton, ``Rectified linear units improve restricted boltzmann
   machines,'' in \emph{ICML}, 2010, pp. 807--814.
-
-\bibitem{jia2014caffe}
-Y.~Jia, E.~Shelhamer, J.~Donahue, S.~Karayev, J.~Long, R.~Girshick,
-  S.~Guadarrama, and T.~Darrell, ``Caffe: Convolutional architecture for fast
-  feature embedding,'' in \emph{Proceedings of the ACM International Conference
-  on Multimedia}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2014, pp.
-  675--678.
 
 \end{thebibliography}

@@ -68,13 +68,13 @@ For each step, given $M$ learned categories in set $S$ and a new category $t$ fr
   \end{algorithmic}
 \end{algorithm}
 %In our task, compared to those methods using the previous parameters directly, the warm start can start with a better initialization for the new category and thus can be more adaptive for new categories. We use Stochastic Gradient Descent (SGD) to update the parameters for all the binary classifiers as well as the negative classifier.
-\begin{figure*}
-  \centering
-  % Requires \usepackage{graphicx}
-  \includegraphics[scale = .6]{fig/domain.jpg}\\
-  \caption{The classifier for class $j$ is initialized with $\hat{f}$ and converged at $f_j$. (a) Conventional adaptation method fail to find good initialization for the new category from source domain. (b) The parameters from $\hat{f}$ are more adaptive for the new categories.}
-  \label{fig:wm}
-\end{figure*}
+%\begin{figure*}
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale = .6]{fig/domain.jpg}\\
+%  \caption{The classifier for class $j$ is initialized with $\hat{f}$ and converged at $f_j$. (a) Conventional adaptation method fail to find good initialization for the new category from source domain. (b) The parameters from $\hat{f}$ are more adaptive for the new categories.}
+%  \label{fig:wm}
+%\end{figure*}
 
 \subsection{Experiment setup \& Evaluation}
 We design the following experiment, transferring from Food-101 dataset to Food-220 dataset while just using a few examples to see the performance of our method. Since Food-101 has more images per category, we use it as the source domain. The fine-tuned GoogLeNet on Food-101 from Section \ref{sec:ft} is used as the feature extractor to generate feature representations for both datasets. Previous study suggests that deeper representations can achieve better performance \cite{hoffman2013one}, so deep feature representations from \emph{Pool5}, the layer before auxiliary linear classifier on top, are used as the inputs of our method.

@@ -33,6 +33,7 @@
 \citation{zeiler2010deconvolutional}
 \citation{CiresanIJCAI11}
 \citation{krizhevsky2012imagenet}
+\citation{jia2014caffe}
 \citation{szegedy2014going}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Background}{2}}
 \newlabel{sec:bg}{{II}{2}}
@@ -48,31 +49,31 @@
 \citation{bossard2014food}
 \citation{singh2012unsupervised}
 \citation{farabet2013learning}
-\citation{zhang2014part}
-\citation{razavian2014cnn}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Inception Module. $n\times n$ stands for size $n$ receptive field, $n\times n\_reduce$ stands for the $1\times 1$ convolutional layer before the $n\times n$ convolution layer and $pool\_proj$ is another $1\times 1$ convolutional layer after the MAX pooling layer. The output layer concatenates all its input layers.}}{3}}
-\newlabel{incept}{{1}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The classifier for class $j$ is initialized with $\mathaccent "705E\relax {f}$ and converged at $f_j$. (a) Conventional adaptation method using the parameters of the learned category and need more training time find good solution for the target category. (b) The parameters from $\mathaccent "705E\relax {f}$ reject all learned categories and can learn faster for the new categories.}}{3}}
+\newlabel{fig:wm}{{1}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Inception Module. $n\times n$ stands for size $n$ receptive field, $n\times n\_reduce$ stands for the $1\times 1$ convolutional layer before the $n\times n$ convolution layer and $pool\_proj$ is another $1\times 1$ convolutional layer after the MAX pooling layer. The output layer concatenates all its input layers.}}{3}}
+\newlabel{incept}{{2}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Architecture of GoogLeNet}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Pre-training and Fine-tuning GoogLeNet}{3}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Top-5 Accuracy for different deep cnn architectures}}{3}}
 \newlabel{tab:ft}{{I}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Advantage of GoogLeNet for fine-tuning}{3}}
+\citation{zhang2014part}
+\citation{razavian2014cnn}
 \citation{krizhevsky2012imagenet}
 \citation{simonyan2014very}
-\citation{glorot2010understanding}
-\citation{NairH10}
 \@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Top-1 accuracy compared to other methods on Food-101 dataset in percent}}{4}}
 \newlabel{tab:101}{{II}{4}}
 \@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Accuracy for different number of examples in each category}}{4}}
 \newlabel{tab:mini}{{III}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Visualization of some feature maps of GoogLeNet models in different layers for the same input image. 64 feature maps of each layer are shown. Conv1 is the first convolutional layer and Inception\_5b is the last convolutional layer. }}{4}}
-\newlabel{fig:sashimi}{{2}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Visualization of some feature maps of GoogLeNet models in different layers for the same input image. 64 feature maps of each layer are shown. Conv1 is the first convolutional layer and Inception\_5b is the last convolutional layer. }}{4}}
+\newlabel{fig:sashimi}{{3}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Advantage of GoogLeNet for fine-tuning}{4}}
 \@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Cosine similarity of the weights for similar foods}}{4}}
 \newlabel{tab:weight_sim}{{IV}{4}}
 \@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Average cosine similarity of the representation for similar foods}}{4}}
 \newlabel{tab:pre_sim}{{V}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Warm Start Domain Adaptation for Learning New Categories}{4}}
-\newlabel{sec:da}{{IV}{4}}
+\citation{glorot2010understanding}
+\citation{NairH10}
 \citation{Chatfield14}
 \citation{zeiler2014visualizing}
 \citation{hoffman2013one}
@@ -82,20 +83,21 @@
 \citation{aytar2011tabula}
 \citation{aytar2011tabula}
 \citation{chuwarm}
-\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Cosine similarity of the layers in inception modules between fine-tuned models and pre-trained model for GoogLeNet}}{5}}
-\newlabel{tab:cosg}{{VI}{5}}
-\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Cosine similarity of the layers between fine-tuned models and pre-trained model for AlexNet}}{5}}
-\newlabel{tab:cosa}{{VII}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Warm Start Domain Adaptation for Learning New Categories}{5}}
+\newlabel{sec:da}{{IV}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Limitation of previous approaches}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Incremental adaptive learning for new category}{5}}
 \citation{hoffman2013one}
-\citation{jia2014caffe}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Cosine similarity of the layers in inception modules between fine-tuned models and pre-trained model for GoogLeNet}}{6}}
+\newlabel{tab:cosg}{{VI}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Cosine similarity of the layers between fine-tuned models and pre-trained model for AlexNet}}{6}}
+\newlabel{tab:cosa}{{VII}{6}}
 \@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Average Precision for A-SVM, PMT-SVM, SVM and Logistic Regression trained with deep representation. Source categories without * are determined by cosine similarity}}{6}}
 \newlabel{tab:su_domian}{{VIII}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Experiment setup \& Evaluation}{6}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Warm start adaptation with negative classifier}}{6}}
 \newlabel{algo:ws}{{1}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Experiment setup \& Evaluation}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-D}}Adapting single new categories}{6}}
+\citation{jia2014caffe}
 \bibstyle{IEEEtran}
 \bibdata{IEEEabrv,research}
 \bibcite{ben2007analysis}{1}
@@ -103,8 +105,7 @@
 \bibcite{lowe1999object}{3}
 \bibcite{bay2006surf}{4}
 \bibcite{dalal2005histograms}{5}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The classifier for class $j$ is initialized with $\mathaccent "705E\relax {f}$ and converged at $f_j$. (a) Conventional adaptation method fail to find good initialization for the new category from source domain. (b) The parameters from $\mathaccent "705E\relax {f}$ are more adaptive for the new categories.}}{7}}
-\newlabel{fig:wm}{{3}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-D}}Adapting single new categories}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Some results of top-5 Accuracy for adapting single new category.}}{7}}
 \newlabel{tab:N+1}{{IX}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-E}}Adapting multiple new categories}{7}}
@@ -136,11 +137,11 @@
 \bibcite{kawano14c}{23}
 \bibcite{zeiler2010deconvolutional}{24}
 \bibcite{CiresanIJCAI11}{25}
-\bibcite{szegedy2014going}{26}
-\bibcite{linNiN}{27}
-\bibcite{agrawal2014analyzing}{28}
-\bibcite{glorot2010understanding}{29}
-\bibcite{singh2012unsupervised}{30}
-\bibcite{razavian2014cnn}{31}
-\bibcite{NairH10}{32}
-\bibcite{jia2014caffe}{33}
+\bibcite{jia2014caffe}{26}
+\bibcite{szegedy2014going}{27}
+\bibcite{linNiN}{28}
+\bibcite{agrawal2014analyzing}{29}
+\bibcite{glorot2010understanding}{30}
+\bibcite{singh2012unsupervised}{31}
+\bibcite{razavian2014cnn}{32}
+\bibcite{NairH10}{33}
